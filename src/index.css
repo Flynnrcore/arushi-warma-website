@@ -4,6 +4,7 @@
   --btns-hover: #3a3a64;
   --text: #DCCAE9;
   --headers: #3a3a64;
+  --slider-btn: invert(6%) sepia(11%) saturate(18%) hue-rotate(314deg) brightness(96%) contrast(96%);
   --svg-links: invert(21%) sepia(22%) saturate(1073%) hue-rotate(201deg) brightness(100%) contrast(94%);
   --svg-btn: invert(8%) sepia(44%) saturate(1075%) hue-rotate(191deg) brightness(99%) contrast(91%);
 }
@@ -50,6 +51,10 @@ header {
   text-decoration: underline;
 }
 
+.header-btn:active {
+  transform: translateY(2px);
+}
+
 .logo{
   flex: 1 1 auto;
   margin: 2px 0;
@@ -63,7 +68,53 @@ main {
 
 .band-photo {
   width: 100%;
+  object-fit: cover;
   opacity: 0.9;
+}
+
+.slideshow button {
+  padding: 10px 5px;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.left-slider {
+  position: absolute;
+  top: 20%;
+  left: 10px;
+}
+
+.right-slider {
+  position: absolute;
+  top: 20%;
+  right: 10px;
+}
+
+.left-slider img,
+.right-slider img {
+  opacity: 0.9;
+  width: 30px;
+  filter: var(--slider-btn);
+}
+
+.left-slider img:hover,
+.right-slider img:hover {
+  opacity: 0.7;
+}
+
+.left-slider img:active,
+.right-slider img:active {
+  transform: translateY(2px);
+}
+
+.slideshow button:first-child {
+  left: 10px;
+}
+
+.slideshow button:last-child {
+  right: 10px;
 }
 
 .music-section {
@@ -112,6 +163,10 @@ main {
   opacity: 0.9;
 }
 
+.release-btn:active {
+  transform: translateY(2px);
+}
+
 .btn-img {
   height: 30px;
   filter: var(--svg-btn);
@@ -156,6 +211,10 @@ footer {
   opacity: 0.9;
 }
 
+.footer-link:active {
+  transform: translateY(2px);
+}
+
 .footer-logo {
   max-width: 100%;
   width: 500px;
@@ -170,6 +229,22 @@ footer {
 
   .release-image {
     flex-basis: 50%;
+  }
+
+  .right-slider {
+    top: 40%;
+  }
+
+  .left-slider {
+    top: 40%;
+  }
+
+  .slideshow button:first-child {
+    left: 20px;
+  }
+  
+  .slideshow button:last-child {
+    right: 20px;
   }
 
   .video {

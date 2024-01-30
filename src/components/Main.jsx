@@ -1,10 +1,11 @@
 import MusicSection from "./MusicSection";
 import VideoSection from "./VideoSection";
+import Slideshow from "./Slideshow";
 
 const Main = () => {
   return (
     <main>
-      <img className="band-photo" src="/band.png" alt="band" />
+      <Slideshow />
       <MusicSection />
       <VideoSection />
     </main>
