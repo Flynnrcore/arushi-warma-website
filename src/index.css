@@ -197,10 +197,12 @@ footer {
   height: 45px;
   filter: var(--svg-links);
   margin: 0px 10px;
+  cursor: pointer;
 }
 
 .link-img:hover {
   opacity: 0.9;
+  transform: scale(1.1);
 }
 
 .link-img:active {
