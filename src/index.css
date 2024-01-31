@@ -163,6 +163,7 @@ main {
 
 .video-section {
   display: flex;
+  width: 95vw;
   justify-content: center;
   align-items: center;
   margin: 50px 20px;
