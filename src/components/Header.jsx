@@ -15,7 +15,7 @@ const Header = () => {
         onClick={handleScrollMusic}
         className="header-btn left"
       >
-        МУЗЫКА
+        <img className="link-img" src='/music.svg' alt="to music" />
       </button>
       <img
         className="logo"
@@ -26,7 +26,7 @@ const Header = () => {
         onClick={handleScrollVideo}
         className="header-btn right"
       >
-        ВИДЕО
+        <img className="link-img" src='/video.svg' alt="to video" />
       </button>
     </header>
   );

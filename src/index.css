@@ -19,6 +19,7 @@
 }
 
 body {
+  width: 100vw;
   margin: 0;
   font-family: Georgia, serif;
   -webkit-font-smoothing: antialiased;
@@ -33,6 +34,7 @@ header {
   justify-content: center;
   color: white;
   background-color: var(--lines);
+  overflow: hidden;
 }
 
 .header-btn {
@@ -62,6 +64,10 @@ header {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   min-height: 80vh;
   margin: 0 auto;
 }
@@ -72,7 +78,13 @@ main {
   opacity: 0.9;
 }
 
-.slideshow button {
+.slideshow {
+  width: 100%;
+}
+
+.slider {
+  position: absolute;
+  top: 25%;
   padding: 10px 5px;
   background: none;
   border: none;
@@ -80,77 +92,54 @@ main {
   cursor: pointer;
 }
 
-.left-slider {
-  position: absolute;
-  top: 20%;
+.left {
   left: 10px;
 }
 
-.right-slider {
-  position: absolute;
-  top: 20%;
+.right {
   right: 10px;
 }
 
-.left-slider img,
-.right-slider img {
+.slider img {
   opacity: 0.9;
   width: 20px;
   filter: var(--slider-btn);
 }
 
-.left-slider img:hover,
-.right-slider img:hover {
+.slider img:hover {
   opacity: 0.7;
 }
 
-.left-slider img:active,
-.right-slider img:active {
+.slider img:active {
   transform: translateY(2px);
-}
-
-.slideshow button:first-child {
-  left: 10px;
-}
-
-.slideshow button:last-child {
-  right: 10px;
 }
 
 .music-section {
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  margin: 20px 0;
+  overflow: hidden;
 }
 
 .release-image {
-  max-height: 300px;
+  height: auto;
+  max-width: 300px;
 }
 
 .single {
   display: flex;
+  width:  100vw;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 20px;
-  color: var(--text);
-}
-
-.description {
-  box-sizing: border-box;
-  max-height: 100px;
-  width: 300px;
-  border: 2px solid var(--headers);
-
-}
-
-.description h2 {
+  margin: 20px 0;
   color: var(--text);
 }
 
 .release-btn {
   height: 30px;
   width: 300px;
+  max-width: 95vw;
   padding-top: 5px;
   text-decoration: none;
   text-align: center;
@@ -177,6 +166,7 @@ main {
   justify-content: center;
   align-items: center;
   margin: 50px 20px;
+  padding: 0;
 }
 
 .video {
@@ -191,6 +181,7 @@ footer {
   flex-direction: column;
   height: max-content;
   background: linear-gradient(to top, var(--lines) 70%, transparent 30%);
+  overflow: hidden;
 }
 
 .links {
@@ -201,17 +192,17 @@ footer {
   color: white;
 }
 
-.footer-link {
+.link-img {
   height: 45px;
   filter: var(--svg-links);
   margin: 0px 10px;
 }
 
-.footer-link:hover {
+.link-img:hover {
   opacity: 0.9;
 }
 
-.footer-link:active {
+.link-img:active {
   transform: translateY(2px);
 }
 
@@ -223,37 +214,39 @@ footer {
 
 @media (min-width: 800px) {
   .music-section {
+    width: 800px;
     justify-content: center;
     flex-direction: row;
   }
 
   .release-image {
+    width: 300px;
+    max-width: 300px;
     flex-basis: 50%;
   }
 
-  .left-slider img,
-  .right-slider img {
+  .slider {
+    top: 45%;
+  }
+
+  .slider img {
     width: 30px;
   }
 
-  .right-slider {
-    top: 40%;
-  }
-
-  .left-slider {
-    top: 40%;
-  }
-
-  .slideshow button:first-child {
+  .left {
     left: 20px;
   }
-  
-  .slideshow button:last-child {
+
+  .right {
     right: 20px;
   }
 
+  .video-section {
+    width: 800px;
+    margin: 50px 0;
+  }
+
   .video {
-    max-width: 800px;
-    height: 500px;
+    height: 400px;
   }
 }

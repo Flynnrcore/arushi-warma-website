@@ -33,10 +33,10 @@ const Slideshow = () => {
         src={photos[currentIndex]}
         alt={`Bandphoto ${currentIndex + 1}`} 
       />
-      <button className="left-slider" onClick={prevSlide}>
+      <button className="slider left" onClick={prevSlide}>
         <img src="/left-arrow.svg" alt="prev slide btn" />
       </button>
-      <button className="right-slider" onClick={nextSlide}>
+      <button className="slider right" onClick={nextSlide}>
         <img src="/right-arrow.svg" alt="next slide btn" />
       </button>
     </div>
