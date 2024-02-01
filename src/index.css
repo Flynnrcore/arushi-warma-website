@@ -163,17 +163,18 @@ main {
 
 .video-section {
   display: flex;
-  width: 95vw;
+  flex-direction: column;
+  align-self: center;
   justify-content: center;
   align-items: center;
-  margin: 50px 20px;
   padding: 0;
 }
 
 .video {
   flex-basis: 100%;
-  min-height: 20em;
-  max-width: 90%;
+  min-height: 15em;
+  max-width: 100%;
+  padding: 20px 0;
 }
 
 footer {
@@ -186,9 +187,9 @@ footer {
 }
 
 .links {
+  height: 55px;
   display: flex;
   justify-content: center;
-  height: 55px;
   width: 100%;
   color: white;
 }
@@ -245,11 +246,13 @@ footer {
   }
 
   .video-section {
+    height: max-content;
     width: 800px;
     margin: 50px 0;
   }
 
   .video {
-    height: 400px;
+    min-height: 25em;
+    width: 89%;
   }
 }
