@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 const Slideshow = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -10,9 +10,9 @@ const Slideshow = () => {
     '/slideshow/slide04.webp',
   ];
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % photos.length);
-  };
+  },[photos.length]);
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + photos.length) % photos.length);
@@ -24,7 +24,7 @@ const Slideshow = () => {
     }, 7000);
 
     return () => clearInterval(interval);
-  },[]);
+  },[nextSlide]);
 
   return (
     <div className="slideshow">
@@ -32,7 +32,6 @@ const Slideshow = () => {
         className="band-photo"
         src={photos[currentIndex]}
         alt={`Bandphoto ${currentIndex + 1}`}
-        loading='eager'
       />
       <button className="slider left" onClick={prevSlide}>
         <img src="/left-arrow.svg" alt="prev slide btn" />
