@@ -124,6 +124,7 @@ main {
 .release-image {
   height: auto;
   max-width: 300px;
+  box-shadow: 5px -5px 15px 0px rgba(62, 72, 119, 0.47);
 }
 
 .single {
@@ -145,6 +146,7 @@ main {
   text-align: center;
   color: var(--text);
   background: var(--btns);
+  box-shadow: 5px 0px 15px 0px rgba(62, 72, 119, 0.47);
 }
 
 .release-btn:hover{

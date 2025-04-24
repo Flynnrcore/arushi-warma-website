@@ -7,7 +7,7 @@ const MusicSection = () => {
           alt="single more than justice demands"
           className="release-image"
         />
-        <a className="release-btn" href="https://sfm.click/b/48Ni">
+        <a className="release-btn" href="https://sfm.click/48Ni">
           <img
             className="btn-img"
             src="/headphones.svg"
