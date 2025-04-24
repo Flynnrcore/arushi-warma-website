@@ -3,7 +3,7 @@ const MusicSection = () => {
     <div className="music-section">
       <section className="single">
         <img
-          src="/music-releases/2_track.png"
+          src="/music-releases/2_track.webp"
           alt="single more than justice demands"
           className="release-image"
         />
@@ -17,7 +17,7 @@ const MusicSection = () => {
       </section>
       <section className="single">
         <img
-          src="/music-releases/1_track.png"
+          src="/music-releases/1_track.webp"
           alt="Single to become a human being"
           className="release-image"
         />

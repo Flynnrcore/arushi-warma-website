@@ -175,6 +175,7 @@ main {
   min-height: 15em;
   max-width: 100%;
   padding: 20px 0;
+  border: none;
 }
 
 footer {

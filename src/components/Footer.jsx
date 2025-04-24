@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer>
       <img
-        src="/footer-logo.png"
+        src="/footer-logo.webp"
         alt="footer logo"
         className="footer-logo"
       />
@@ -12,6 +12,7 @@ const Footer = () => {
             className="link-img"
             src="links/vk.svg"
             alt="vk link"
+            loading="lazy"
           />
         </a>
         <a href="https://music.apple.com/ru/artist/arushi-warma/1683510853">
@@ -19,6 +20,7 @@ const Footer = () => {
             className="link-img"
             src="links/apple.svg"
             alt="apple link"
+            loading="lazy"
           />
         </a>
         <a href="https://open.spotify.com/artist/5FUvyfePGGMWnL3b0OJdGx?si=sDOD3e3AQm6VXTTbSKdohA">
@@ -26,6 +28,7 @@ const Footer = () => {
             className="link-img"
             src="links/spotify.svg"
             alt="spotify link"
+             loading="lazy"
           />
         </a>
         <a href="https://music.yandex.ru/artist/19157865">
@@ -33,6 +36,7 @@ const Footer = () => {
             className="link-img"
             src="links/yandex.svg"
             alt="yandex link"
+             loading="lazy"
           />
         </a>
         <a href="https://www.youtube.com/@arushi_warma">
@@ -40,6 +44,7 @@ const Footer = () => {
             className="link-img"
             src="links/youtube.svg"
             alt="youtube link"
+             loading="lazy"
           />
         </a>
       </div>

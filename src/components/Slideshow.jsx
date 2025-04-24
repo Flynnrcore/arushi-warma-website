@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 
 const Slideshow = () => {
-  const photos = [
-    '/slideshow/slide01.jpeg',
-    '/slideshow/slide02.jpeg',
-    '/slideshow/slide03.jpeg',
-    '/slideshow/slide04.jpeg',
-  ];
-
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const photos = [
+    '/slideshow/slide01.webp',
+    '/slideshow/slide02.webp',
+    '/slideshow/slide03.webp',
+    '/slideshow/slide04.webp',
+  ];
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % photos.length);
@@ -24,14 +24,15 @@ const Slideshow = () => {
     }, 7000);
 
     return () => clearInterval(interval);
-  });
+  },[]);
 
   return (
     <div className="slideshow">
       <img
         className="band-photo"
         src={photos[currentIndex]}
-        alt={`Bandphoto ${currentIndex + 1}`} 
+        alt={`Bandphoto ${currentIndex + 1}`}
+        loading='eager'
       />
       <button className="slider left" onClick={prevSlide}>
         <img src="/left-arrow.svg" alt="prev slide btn" />

@@ -19,7 +19,7 @@ const Header = () => {
       </button>
       <img
         className="logo"
-        src="/logo.png"
+        src="/logo.webp"
         alt="band-logo"
       />
       <button
