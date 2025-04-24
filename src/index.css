@@ -5,7 +5,7 @@
   --text: #DCCAE9;
   --headers: #3a3a64;
   --slider-btn: invert(6%) sepia(11%) saturate(18%) hue-rotate(314deg) brightness(96%) contrast(96%);
-  --svg-links: invert(21%) sepia(22%) saturate(1073%) hue-rotate(201deg) brightness(100%) contrast(94%);
+  --svg-links: invert(97%) sepia(3%) saturate(13%) hue-rotate(79deg) brightness(104%) contrast(104%);
   --svg-btn: invert(8%) sepia(44%) saturate(1075%) hue-rotate(191deg) brightness(99%) contrast(91%);
 }
 
@@ -28,20 +28,44 @@ body {
 }
 
 header {
-  height: 90px;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  height: 95px;
+  color: white;
+  overflow: hidden;
+}
+
+.header-logo{
+  max-width: 40vw;
+  height: auto;
+}
+
+.header-icons {
+  display: flex;
+  max-width: 60vw;
+  height: auto;
+}
+
+.header-menu {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: white;
-  background-color: var(--lines);
-  overflow: hidden;
+  justify-content: space-between;
+  background-color: black;
+  height: 90px;
+  width: 90%;
+  border-radius: 16px;
+  margin: 5px;
+  padding: 0 20px;
 }
 
 .header-btn {
   font-family: Arial, sans-serif;
-  flex: 1 1 auto;
-  height: 90px;
-  max-width: 200px;
+  height: auto;
+  max-width: 15vw;
   flex-basis: 30%;
   font-size: 20px;
   background: none;
@@ -170,12 +194,13 @@ main {
   justify-content: center;
   align-items: center;
   padding: 0;
+  width: 100%;
 }
 
 .video {
   flex-basis: 100%;
-  min-height: 15em;
-  max-width: 100%;
+  min-height: 42vh;
+  width: 90vw;
   padding: 20px 0;
   border: none;
 }
@@ -198,7 +223,7 @@ footer {
 }
 
 .link-img {
-  height: 45px;
+  max-height: 45px;
   filter: var(--svg-links);
   margin: 0px 10px;
   cursor: pointer;
@@ -220,6 +245,9 @@ footer {
 }
 
 @media (min-width: 800px) {
+  .header-logo {
+    max-width: 25vw;
+  }
   .music-section {
     width: 800px;
     justify-content: center;
@@ -249,13 +277,13 @@ footer {
   }
 
   .video-section {
-    height: max-content;
-    width: 800px;
+    height: min-content;
+    width: 100vw;
     margin: 50px 0;
   }
 
   .video {
-    min-height: 25em;
-    width: 89%;
+    min-height: 98vh;
+    width: 90vw;
   }
 }

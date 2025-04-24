@@ -1,14 +1,21 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
+import { useScroll } from '../hooks/useScroll';
 
-const Slideshow = () => {
+const Slideshow = ({ setHeaderBg }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const photosBlockRef = useRef(null);
+  const isScrolledPast = useScroll(photosBlockRef);
 
-  const photos = [
+  /*const photos = [
     '/slideshow/slide01.webp',
     '/slideshow/slide02.webp',
     '/slideshow/slide03.webp',
     '/slideshow/slide04.webp',
-  ];
+  ];*/
+
+  const photos = [
+    '/slideshow/slide04.webp'
+  ]
 
   const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % photos.length);
@@ -26,8 +33,12 @@ const Slideshow = () => {
     return () => clearInterval(interval);
   },[nextSlide]);
 
+  useEffect(() => {
+    setHeaderBg(isScrolledPast ? '#111626' : 'transparent');
+  }, [isScrolledPast, setHeaderBg]);
+
   return (
-    <div className="slideshow">
+    <div className="slideshow" ref={photosBlockRef}>
       <img
         className="band-photo"
         src={photos[currentIndex]}

@@ -1,11 +1,13 @@
+import { AboutSection } from "./AboutSection";
 import MusicSection from "./MusicSection";
 import VideoSection from "./VideoSection";
 import Slideshow from "./Slideshow";
 
-const Main = () => {
+const Main = ({ setHeaderBg }) => {
   return (
     <main>
-      <Slideshow />
+      <Slideshow setHeaderBg={setHeaderBg} />
+      <AboutSection />
       <MusicSection />
       <VideoSection />
     </main>

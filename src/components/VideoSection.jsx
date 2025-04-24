@@ -4,7 +4,7 @@ const VideoSection = () => {
       <iframe
       className="video"
       src="https://www.youtube.com/embed/ZLaS0psJOCw?si=EktXJDqNz18mg1lL"
-      title="YouTube"
+      title="Arushi Warma - Больше чем того требует справедливость"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowFullScreen
       loading="auto"
@@ -12,7 +12,7 @@ const VideoSection = () => {
       <iframe
         className="video" 
         src="https://www.youtube.com/embed/z6re6Qmoafw?si=YZLnLATYQAZRDofa"
-        title="YouTube video player"
+        title="Arushi Warma - Человеком стать"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
         loading="auto"
