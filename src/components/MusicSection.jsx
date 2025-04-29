@@ -1,4 +1,4 @@
-const MusicSection = () => {
+function MusicSection() {
   return (
     <section className="music-section">
       <h2 className="header-text">музыка / music</h2>
@@ -48,6 +48,6 @@ const MusicSection = () => {
       </div>
     </section>
   );
-};
+}
 
 export default MusicSection;

@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-export const useScroll = (ref) => {
+const useScroll = (ref) => {
   const [isScrolledPast, setIsScrolledPast] = useState(false);
 
   useEffect(() => {
@@ -8,7 +8,7 @@ export const useScroll = (ref) => {
       ([entry]) => {
         setIsScrolledPast(!entry.isIntersecting);
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (ref.current) {
@@ -19,8 +19,10 @@ export const useScroll = (ref) => {
       if (ref.current) {
         observer.unobserve(ref.current);
       }
-    }
+    };
   }, [ref]);
 
   return isScrolledPast;
 };
+
+export default useScroll;
