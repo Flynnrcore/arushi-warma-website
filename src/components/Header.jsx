@@ -1,17 +1,7 @@
 function Header({ bgColor }) {
-  const handleScrollInfo = () => {
-    const musicSection = document.querySelector('.about-section');
-    musicSection.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const handleScrollMusic = () => {
-    const musicSection = document.querySelector('.music-section');
-    musicSection.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const handleScrollVideo = () => {
-    const musicSection = document.querySelector('.video-section');
-    musicSection.scrollIntoView({ behavior: 'smooth' });
+  const handleScrollToEl = (className) => {
+    const element = document.querySelector(`.${className}`);
+    element.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -23,20 +13,26 @@ function Header({ bgColor }) {
         }}
         className="header-menu"
       >
-        <img
-          className="header-logo"
-          src="/header-logo.webp"
-          alt="arushi warma band logo"
-          height="80px"
-        />
+        <button
+          className="header-btn"
+          type="button"
+          onClick={() => handleScrollToEl('mainband-photo')}
+        >
+          <img
+            className="header-logo"
+            src="/header-logo.webp"
+            alt="arushi warma band logo"
+            height="80px"
+          />
+        </button>
         <div className="header-icons">
-          <button type="button" onClick={handleScrollInfo} className="header-btn left">
+          <button type="button" onClick={() => handleScrollToEl('about-section')} className="header-btn left">
             <img className="link-img" src="/about-group.svg" alt="to music" />
           </button>
-          <button type="button" onClick={handleScrollMusic} className="header-btn left">
+          <button type="button" onClick={() => handleScrollToEl('music-section')} className="header-btn left">
             <img className="link-img" src="/music.svg" alt="to music" />
           </button>
-          <button type="button" onClick={handleScrollVideo} className="header-btn right">
+          <button type="button" onClick={() => handleScrollToEl('video-section')} className="header-btn right">
             <img className="link-img" src="/video.svg" alt="to video" />
           </button>
         </div>
