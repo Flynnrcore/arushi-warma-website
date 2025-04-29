@@ -1,5 +1,10 @@
+import Slideshow from "./Slideshow";
+
 export const AboutSection = () => {
   return (
-    <div className="about-section"></div>
+    <section className="about-section">
+      <h2 className="header-text">фото / photo</h2>
+      <Slideshow />
+    </section>
   )
 };

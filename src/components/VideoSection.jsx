@@ -1,6 +1,7 @@
 const VideoSection = () => {
   return (
-    <div className="video-section">
+    <section className="video-section">
+      <h2 className="header-text">видео / video</h2>
       <iframe
       className="video"
       src="https://www.youtube.com/embed/ZLaS0psJOCw?si=EktXJDqNz18mg1lL"
@@ -17,7 +18,7 @@ const VideoSection = () => {
         allowFullScreen
         loading="auto"
       />
-    </div>
+    </section>
   );
 };
 
