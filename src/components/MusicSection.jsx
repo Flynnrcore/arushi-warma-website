@@ -28,7 +28,7 @@ function MusicSection() {
             className="release-image"
           />
         </MusicItem>
-        <MusicItem isNew href="/">
+        <MusicItem href="/">
           <img
             src="/music-releases/3_track.webp"
             alt="fox hunt single"
