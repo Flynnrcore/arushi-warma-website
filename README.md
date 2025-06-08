@@ -2,7 +2,7 @@
 
 [arushiwarma.vercel.app](https://arushiwarma.vercel.app/)
 
-<br/>Add commentMore actions
+<br/>
 <a href='https://arushiwarma.vercel.app/' target='_blank'><img src='https://i.postimg.cc/5NrZkqsq/temp-Image-XJKGHr.avif' border='0' alt='site view'/></a>
 <br/>
 
