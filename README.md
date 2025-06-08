@@ -2,6 +2,10 @@
 
 [arushiwarma.vercel.app](https://arushiwarma.vercel.app/)
 
+<br/>Add commentMore actions
+<a href='https://arushiwarma.vercel.app/' target='_blank'><img src='https://i.postimg.cc/5NrZkqsq/temp-Image-XJKGHr.avif' border='0' alt='site view'/></a>
+<br/>
+
 ## О проекте
 
 Это официальный сайт музыкальной группы **Arushi Warma**. Здесь вы найдете последние релизы, фотографии, видеоклипы и ссылки на музыкальные платформы.
