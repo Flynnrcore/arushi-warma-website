@@ -28,6 +28,7 @@ function MusicSection() {
             className="release-image"
           />
         </MusicItem>
+        {/*
         <MusicItem href="/">
           <img
             src="/music-releases/3_track.webp"
@@ -35,6 +36,7 @@ function MusicSection() {
             className="release-image"
           />
         </MusicItem>
+        */}
         <MusicItem href="https://sfm.click/Ronj">
           <img
             src="/music-releases/1_track.webp"

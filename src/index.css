@@ -328,7 +328,8 @@ footer {
   }
 
   .releases {
-    justify-content: space-between;
+    justify-content: center;
+    gap: 3rem;
     flex-direction: row;
     flex-wrap: nowrap;
     overflow: visible;
