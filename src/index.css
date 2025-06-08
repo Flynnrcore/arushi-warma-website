@@ -1,12 +1,27 @@
+@font-face {
+  font-family: "customFont";
+  src: url("/public/fonts/Blackcraft.ttf");
+}
+
 :root {
   --lines: #111626;
   --btns: #2b2c52;
   --btns-hover: #3a3a64;
-  --text: #DCCAE9;
+  --text: #dccae9;
   --headers: #3a3a64;
-  --slider-btn: invert(6%) sepia(11%) saturate(18%) hue-rotate(314deg) brightness(96%) contrast(96%);
-  --svg-links: invert(21%) sepia(22%) saturate(1073%) hue-rotate(201deg) brightness(100%) contrast(94%);
-  --svg-btn: invert(8%) sepia(44%) saturate(1075%) hue-rotate(191deg) brightness(99%) contrast(91%);
+  --slider-btn: invert(6%) sepia(11%) saturate(18%) hue-rotate(314deg)
+    brightness(96%) contrast(96%);
+  --svg-links: invert(97%) sepia(3%) saturate(13%) hue-rotate(79deg)
+    brightness(104%) contrast(104%);
+  --svg-btn: invert(8%) sepia(44%) saturate(1075%) hue-rotate(191deg)
+    brightness(99%) contrast(91%);
+}
+
+.header-text {
+  letter-spacing: 3px;
+  font-size: larger;
+  margin: 0;
+  color: var(--headers);
 }
 
 .App {
@@ -21,29 +36,57 @@
 body {
   width: 100vw;
   margin: 0;
-  font-family: Georgia, serif;
+  font-family: "customFont", sans-serif;
+  font-weight: 100;
+  color: white;
+  font-size: 32px;
+  font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #232646;
 }
 
 header {
-  height: 90px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  height: 95px;
   color: white;
-  background-color: var(--lines);
   overflow: hidden;
 }
 
-.header-btn {
-  font-family: Arial, sans-serif;
-  flex: 1 1 auto;
+.header-logo {
+  max-width: 40vw;
+  height: auto;
+  max-height: 80px;
+  cursor: pointer;
+}
+
+.header-icons {
+  display: flex;
+  max-width: 60vw;
+  height: auto;
+}
+
+.header-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
   height: 90px;
-  max-width: 200px;
+  width: 90%;
+  border-radius: 16px;
+  margin: 5px;
+  padding: 0 20px;
+}
+
+.header-btn {
+  height: auto;
+  max-width: 15vw;
   flex-basis: 30%;
-  font-size: 20px;
   background: none;
   color: white;
   border: none;
@@ -57,7 +100,7 @@ header {
   transform: translateY(2px);
 }
 
-.logo{
+.logo {
   flex: 1 1 auto;
   margin: 2px 0;
   max-width: 85px;
@@ -70,6 +113,14 @@ main {
   align-items: center;
   min-height: 80vh;
   margin: 0 auto;
+  gap: 20px;
+}
+
+.mainband-photo {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  object-fit: cover;
 }
 
 .band-photo {
@@ -78,13 +129,20 @@ main {
   opacity: 0.9;
 }
 
+.about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .slideshow {
+  position: relative;
   width: 100%;
 }
 
 .slider {
   position: absolute;
-  top: 25%;
+  top: 45%;
   padding: 10px 5px;
   background: none;
   border: none;
@@ -117,8 +175,17 @@ main {
 .music-section {
   display: flex;
   flex-direction: column;
-  margin: 20px 0;
+  flex-wrap: wrap;
   overflow: hidden;
+  width: 100%;
+}
+
+.releases {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow: hidden;
+  width: 90vw !important;
 }
 
 .release-image {
@@ -129,12 +196,23 @@ main {
 
 .single {
   display: flex;
-  width:  100vw;
+  width: 100vw;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 20px 0;
-  color: var(--text);
+}
+
+.single-wrapper {
+  position: relative;
+  max-height: auto;
+}
+
+.fire-chip {
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  width: 50px;
 }
 
 .release-btn {
@@ -149,7 +227,7 @@ main {
   box-shadow: 5px 0px 15px 0px rgba(62, 72, 119, 0.47);
 }
 
-.release-btn:hover{
+.release-btn:hover {
   background: var(--btns-hover);
   opacity: 0.9;
 }
@@ -170,12 +248,13 @@ main {
   justify-content: center;
   align-items: center;
   padding: 0;
+  width: 100%;
 }
 
 .video {
   flex-basis: 100%;
-  min-height: 15em;
-  max-width: 100%;
+  min-height: 42vh;
+  width: 90vw;
   padding: 20px 0;
   border: none;
 }
@@ -185,7 +264,7 @@ footer {
   align-items: center;
   flex-direction: column;
   height: max-content;
-  background: linear-gradient(to top, var(--lines) 70%, transparent 30%);
+  background: linear-gradient(to top, var(--lines) 59%, transparent 41%);
   overflow: hidden;
 }
 
@@ -195,10 +274,12 @@ footer {
   justify-content: center;
   width: 100%;
   color: white;
+  margin: -25px 0 20px;
+  z-index: 1000;
 }
 
 .link-img {
-  height: 45px;
+  max-height: 45px;
   filter: var(--svg-links);
   margin: 0px 10px;
   cursor: pointer;
@@ -220,16 +301,64 @@ footer {
 }
 
 @media (min-width: 800px) {
+  main {
+    gap: 50px;
+  }
+
+  .header-logo {
+    max-width: 25vw;
+  }
+
+  .header-text {
+    font-size: 2em;
+    letter-spacing: 3px;
+  }
+
+  .about-section {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
   .music-section {
-    width: 800px;
+    width: 90vw;
+    overflow: visible;
+    gap: 25px;
+  }
+
+  .releases {
     justify-content: center;
+    gap: 3rem;
     flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: visible;
+  }
+
+  .single {
+    display: flex;
+    position: relative;
+    width: 28vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    color: var(--text);
+  }
+
+  .single:hover {
+    scale: 1.03;
+    transition: 0.5s;
   }
 
   .release-image {
-    width: 300px;
-    max-width: 300px;
-    flex-basis: 50%;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .release-btn {
+    width: 100%;
+    max-width: 100%;
   }
 
   .slider {
@@ -249,13 +378,13 @@ footer {
   }
 
   .video-section {
-    height: max-content;
-    width: 800px;
-    margin: 50px 0;
+    height: min-content;
+    width: 100vw;
+    gap: 25px;
   }
 
   .video {
-    min-height: 25em;
-    width: 89%;
+    min-height: 98vh;
+    width: 90vw;
   }
 }

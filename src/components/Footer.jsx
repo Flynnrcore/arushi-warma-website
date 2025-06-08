@@ -1,11 +1,7 @@
-const Footer = () => {
+function Footer() {
   return (
     <footer>
-      <img
-        src="/footer-logo.webp"
-        alt="footer logo"
-        className="footer-logo"
-      />
+      <img src="/footer-logo.webp" alt="footer logo" className="footer-logo" />
       <div className="links">
         <a href="https://vk.com/arushi_warma">
           <img
@@ -28,7 +24,7 @@ const Footer = () => {
             className="link-img"
             src="links/spotify.svg"
             alt="spotify link"
-             loading="lazy"
+            loading="lazy"
           />
         </a>
         <a href="https://music.yandex.ru/artist/19157865">
@@ -36,7 +32,7 @@ const Footer = () => {
             className="link-img"
             src="links/yandex.svg"
             alt="yandex link"
-             loading="lazy"
+            loading="lazy"
           />
         </a>
         <a href="https://www.youtube.com/@arushi_warma">
@@ -44,12 +40,12 @@ const Footer = () => {
             className="link-img"
             src="links/youtube.svg"
             alt="youtube link"
-             loading="lazy"
+            loading="lazy"
           />
         </a>
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;
