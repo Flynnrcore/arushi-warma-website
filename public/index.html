@@ -1,17 +1,72 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Arushi Warma official website" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>Arushi Warma official website</title>
-  </head>
+<html lang="ru" prefix="og: https://ogp.me/ns#">
+<head>
+  <!-- Базовые мета-теги -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+  <!-- SEO -->
+  <title>Arushi Warma | Официальный сайт  | Музыка, видео, новости</title>
+  <meta name="description" content="Официальный сайт группы Arushi Warma. Музыка, клипы, новости, концерты, фото и видео. Слушайте новые релизы и следите за новостями группы." />
+  <meta name="keywords" content="Arushi Warma, металкор, metalcore, металкор, экстремальный метал, новая группа металкор" />
+  <meta name="author" content="Arushi Warma">
+  <link rel="canonical" href="https://arushiwarma.vercel.app" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://arushiwarma.vercel.app" />
+  <meta property="og:title" content="Arushi Warma - Экстремальный металкор из России" />
+  <meta property="og:description" content="Официальный источник самой тяжелой музыки от Arushi Warma" />
+  <meta property="og:image" content="https://arushiwarma.vercel.app/footer-logo.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:site_name" content="Arushi Warma">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://arushiwarma.vercel.app" />
+  <meta name="twitter:title" content="Arushi Warma | #Metalcore #Melodic #Experemental" />
+  <meta name="twitter:description" content="Добро пожаловать в эпицентр русского металкора" />
+  <meta name="twitter:image" content="https://arushiwarma.vercel.app/footer-logo.webp" />
+  <!-- <meta name="twitter:creator" content="@arushi_warma"> -->
+
+  <!-- Schema.org разметка для метал-группы -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicGroup",
+      "name": "Arushi Warma",
+      "description": "Российская металкор группа",
+      "url": "https://arushiwarma.vercel.app",
+      "logo": "https://arushiwarma.vercel.app/footer-logo.webp",
+      "image": "https://arushiwarma.vercel.app/footer-logo.webp",
+      "genre": ["Metalcore", "Extreme Metal", "Melodic Metalcore"],
+      "foundingLocation": "Russia",
+      "foundingDate": "2023",
+      "sameAs": [
+        "https://www.youtube.com/@arushi_warma",
+        "https://vk.com/arushi_warma"
+      ],
+      "track": [
+        { "@type": "MusicRecording", "name": "Человеком стать", "duration": "PT3M45S" },
+        { "@type": "MusicRecording", "name": "Больше чем того требует справедливость", "duration": "PT4M10S" }
+      ]
+    }
+  </script>
+
+  <!-- Иконки -->
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+  <!-- Мультиязычность -->
+  <link rel="alternate" hreflang="ru" href="https://arushiwarma.vercel.app" />
+  <link rel="alternate" hreflang="x-default" href="https://arushiwarma.vercel.app" />
+</head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>Для корректной работы сайта, пожалуйста, включите JavaScript в настройках вашего браузера.</noscript>
     <div id="root"></div>
   </body>
 </html>
