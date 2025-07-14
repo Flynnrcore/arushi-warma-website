@@ -26,14 +26,14 @@ function Header({ bgColor }) {
           />
         </button>
         <div className="header-icons">
-          <button type="button" onClick={() => handleScrollToEl('about-section')} className="header-btn left">
-            <img className="link-img" src="/about-group.svg" alt="to music" />
+          <button type="button" aria-label="Перейти к фото группы" onClick={() => handleScrollToEl('about-section')} className="header-btn left">
+            <img className="link-img" src="/about-group.svg" alt="" />
           </button>
-          <button type="button" onClick={() => handleScrollToEl('music-section')} className="header-btn left">
-            <img className="link-img" src="/music.svg" alt="to music" />
+          <button type="button" aria-label="Перейти к музыке" onClick={() => handleScrollToEl('music-section')} className="header-btn left">
+            <img className="link-img" src="/music.svg" alt="" />
           </button>
-          <button type="button" onClick={() => handleScrollToEl('video-section')} className="header-btn right">
-            <img className="link-img" src="/video.svg" alt="to video" />
+          <button type="button" aria-label="Перейти к видео" onClick={() => handleScrollToEl('video-section')} className="header-btn right">
+            <img className="link-img" src="/video.svg" alt="" />
           </button>
         </div>
       </div>

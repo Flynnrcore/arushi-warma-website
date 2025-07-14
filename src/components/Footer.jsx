@@ -3,7 +3,7 @@ function Footer() {
     <footer>
       <img src="/footer-logo.webp" alt="footer logo" className="footer-logo" />
       <div className="links">
-        <a href="https://vk.com/arushi_warma">
+        <a target="_blank" rel="noopener noreferrer" href="https://vk.com/arushi_warma">
           <img
             className="link-img"
             src="links/vk.svg"
@@ -11,7 +11,7 @@ function Footer() {
             loading="lazy"
           />
         </a>
-        <a href="https://music.apple.com/ru/artist/arushi-warma/1683510853">
+        <a target="_blank" rel="noopener noreferrer" href="https://music.apple.com/ru/artist/arushi-warma/1683510853">
           <img
             className="link-img"
             src="links/apple.svg"
@@ -19,7 +19,7 @@ function Footer() {
             loading="lazy"
           />
         </a>
-        <a href="https://open.spotify.com/artist/5FUvyfePGGMWnL3b0OJdGx?si=sDOD3e3AQm6VXTTbSKdohA">
+        <a target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/artist/5FUvyfePGGMWnL3b0OJdGx?si=sDOD3e3AQm6VXTTbSKdohA">
           <img
             className="link-img"
             src="links/spotify.svg"
@@ -27,7 +27,7 @@ function Footer() {
             loading="lazy"
           />
         </a>
-        <a href="https://music.yandex.ru/artist/19157865">
+        <a target="_blank" rel="noopener noreferrer" href="https://music.yandex.ru/artist/19157865">
           <img
             className="link-img"
             src="links/yandex.svg"
@@ -35,7 +35,7 @@ function Footer() {
             loading="lazy"
           />
         </a>
-        <a href="https://www.youtube.com/@arushi_warma">
+        <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@arushi_warma">
           <img
             className="link-img"
             src="links/youtube.svg"

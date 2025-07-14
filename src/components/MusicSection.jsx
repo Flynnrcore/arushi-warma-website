@@ -5,7 +5,7 @@ function MusicItem({ isNew = false, href, children }) {
         {isNew && <img className="fire-chip" src="/fire.gif" alt="New release" style={{ zIndex: 2 }} />}
         {children}
       </div>
-      <a className="release-btn" href={href} rel="noopener noreferrer">
+      <a className="release-btn" href={href} rel="noopener noreferrer" aria-label="Перейти к релизу">
         <img
           className="btn-img"
           src="/headphones.svg"
