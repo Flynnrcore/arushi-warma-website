@@ -1,15 +1,17 @@
-import { useEffect, useRef } from 'react';
-import AboutSection from './AboutSection';
-import MusicSection from './MusicSection';
-import VideoSection from './VideoSection';
-import useScroll from '../hooks/useScroll';
+import { useEffect, useRef } from "react";
+
+import useScroll from "../hooks/useScroll";
+
+import AboutSection from "./AboutSection";
+import MusicSection from "./MusicSection";
+import VideoSection from "./VideoSection/VideoSection";
 
 function Main({ setHeaderBg }) {
   const photosBlockRef = useRef(null);
   const isScrolledPast = useScroll(photosBlockRef);
 
   useEffect(() => {
-    setHeaderBg(isScrolledPast ? '#111626' : 'transparent');
+    setHeaderBg(isScrolledPast ? "#111626" : "transparent");
   }, [isScrolledPast, setHeaderBg]);
 
   return (

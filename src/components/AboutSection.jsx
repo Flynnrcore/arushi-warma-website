@@ -1,4 +1,4 @@
-import Slideshow from './Slideshow';
+import Slideshow from "./Slideshow";
 
 function AboutSection() {
   return (

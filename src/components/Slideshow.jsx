@@ -1,14 +1,14 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from "react";
 
 function Slideshow() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setAutoPlaying] = useState(true);
 
   const photos = [
-    '/slideshow/slide01.webp',
-    '/slideshow/slide02.webp',
-    '/slideshow/slide03.webp',
-    '/slideshow/slide04.webp',
+    "/slideshow/slide01.webp",
+    "/slideshow/slide02.webp",
+    "/slideshow/slide03.webp",
+    "/slideshow/slide04.webp",
   ];
 
   const nextSlide = useCallback(() => {
@@ -25,7 +25,7 @@ function Slideshow() {
 
   const hadnleChangeSlide = (direction) => {
     setAutoPlaying(false);
-    if (direction === 'next') nextSlide();
+    if (direction === "next") nextSlide();
     else prevSlide();
   };
 
@@ -48,13 +48,17 @@ function Slideshow() {
         src={photos[currentIndex]}
         alt={`Bandphoto ${currentIndex + 1}`}
       />
-      <button type="button" className="slider left" onClick={() => hadnleChangeSlide('prev')}>
+      <button
+        type="button"
+        className="slider left"
+        onClick={() => hadnleChangeSlide("prev")}
+      >
         <img src="/left-arrow.svg" alt="prev slide btn" />
       </button>
       <button
         type="button"
         className="slider right"
-        onClick={() => hadnleChangeSlide('next')}
+        onClick={() => hadnleChangeSlide("next")}
       >
         <img src="/right-arrow.svg" alt="next slide btn" />
       </button>

@@ -2,10 +2,22 @@ function MusicItem({ isNew = false, href, children }) {
   return (
     <article className="single">
       <div className="single-wrapper">
-        {isNew && <img className="fire-chip" src="/fire.gif" alt="New release" style={{ zIndex: 2 }} />}
+        {isNew && (
+          <img
+            className="fire-chip"
+            src="/fire.gif"
+            alt="New release"
+            style={{ zIndex: 2 }}
+          />
+        )}
         {children}
       </div>
-      <a className="release-btn" href={href} rel="noopener noreferrer" aria-label="Перейти к релизу">
+      <a
+        className="release-btn"
+        href={href}
+        rel="noopener noreferrer"
+        aria-label="Перейти к релизу"
+      >
         <img
           className="btn-img"
           src="/headphones.svg"
