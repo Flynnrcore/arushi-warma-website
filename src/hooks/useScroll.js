@@ -4,6 +4,12 @@ const useScroll = (ref) => {
   const [isScrolledPast, setIsScrolledPast] = useState(false);
 
   useEffect(() => {
+    const currentElement = ref.current;
+
+    if (!currentElement) {
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsScrolledPast(!entry.isIntersecting);
@@ -11,17 +17,14 @@ const useScroll = (ref) => {
       { threshold: 0.1 },
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(currentElement);
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentElement) {
+        observer.unobserve(currentElement);
       }
     };
   }, [ref]);
-
   return isScrolledPast;
 };
 
