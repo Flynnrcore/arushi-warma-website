@@ -1,18 +1,16 @@
-import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Main from "./components/Main";
+import MainPage from "./pages/MainPage";
+import ReleasePage from "./pages/ReleasePage";
 
 function App() {
-  const [headerBg, setHeaderBg] = useState("transparent");
-
   return (
-    <div className="App">
-      <Header bgColor={headerBg} />
-      <Main setHeaderBg={setHeaderBg} />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/release/:id" element={<ReleasePage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

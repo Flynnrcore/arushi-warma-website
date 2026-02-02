@@ -46,21 +46,21 @@ function Slideshow() {
       <img
         className="band-photo"
         src={photos[currentIndex]}
-        alt={`Bandphoto ${currentIndex + 1}`}
+        alt={`Фото группы ${currentIndex + 1}`}
       />
       <button
         type="button"
         className="slider left"
         onClick={() => hadnleChangeSlide("prev")}
       >
-        <img src="/left-arrow.svg" alt="prev slide btn" />
+        <img src="/left-arrow.svg" alt="Иконка кнопки предыдущей фотографии" />
       </button>
       <button
         type="button"
         className="slider right"
         onClick={() => hadnleChangeSlide("next")}
       >
-        <img src="/right-arrow.svg" alt="next slide btn" />
+        <img src="/right-arrow.svg" alt="Иконка кнопки следующей фотографии" />
       </button>
     </article>
   );

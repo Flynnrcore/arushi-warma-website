@@ -1,68 +1,35 @@
+import LinkButton from "./LinkButton";
+
 function Footer() {
   return (
     <footer>
       <img src="/footer-logo.webp" alt="footer logo" className="footer-logo" />
       <div className="links">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
+        <LinkButton
+          src="links/vk.svg"
           href="https://vk.com/arushi_warma"
-        >
-          <img
-            className="link-img"
-            src="links/vk.svg"
-            alt="vk link"
-            loading="lazy"
-          />
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
+          name="VK music"
+        />
+        <LinkButton
+          src="links/apple.svg"
           href="https://music.apple.com/ru/artist/arushi-warma/1683510853"
-        >
-          <img
-            className="link-img"
-            src="links/apple.svg"
-            alt="apple link"
-            loading="lazy"
-          />
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
+          name="Apple music"
+        />
+        <LinkButton
+          src="links/spotify.svg"
           href="https://open.spotify.com/artist/5FUvyfePGGMWnL3b0OJdGx?si=sDOD3e3AQm6VXTTbSKdohA"
-        >
-          <img
-            className="link-img"
-            src="links/spotify.svg"
-            alt="spotify link"
-            loading="lazy"
-          />
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
+          name="Spotify"
+        />
+        <LinkButton
+          src="links/yandex.svg"
           href="https://music.yandex.ru/artist/19157865"
-        >
-          <img
-            className="link-img"
-            src="links/yandex.svg"
-            alt="yandex link"
-            loading="lazy"
-          />
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
+          name="yandex music"
+        />
+        <LinkButton
+          src="links/youtube.svg"
           href="https://www.youtube.com/@arushi_warma"
-        >
-          <img
-            className="link-img"
-            src="links/youtube.svg"
-            alt="youtube link"
-            loading="lazy"
-          />
-        </a>
+          name="youtube"
+        />
       </div>
     </footer>
   );

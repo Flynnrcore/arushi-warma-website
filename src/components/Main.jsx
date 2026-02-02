@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import useScroll from "../hooks/useScroll";
 
 import AboutSection from "./AboutSection";
-import MusicSection from "./MusicSection";
+import MusicSection from "./MusicSection/MusicSection";
 import VideoSection from "./VideoSection/VideoSection";
 
 function Main({ setHeaderBg }) {
@@ -19,7 +19,7 @@ function Main({ setHeaderBg }) {
       <img
         className="mainband-photo"
         src="/band.webp"
-        alt="arushi warma band"
+        alt="Логотип группы Arushi Warma"
         ref={photosBlockRef}
       />
       <AboutSection />
