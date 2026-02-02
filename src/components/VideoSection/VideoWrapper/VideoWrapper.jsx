@@ -30,7 +30,7 @@ function VideoWrapper({ youtubelink, vkvideolink, title }) {
         >
           Vk video
         </button>
-        <span className="video-src-btn">/</span>
+        <span className="video-src-btn">|</span>
         <button
           onClick={() => changeSourseHandle("youtube")}
           type="button"

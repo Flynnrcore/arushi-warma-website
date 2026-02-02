@@ -6,7 +6,7 @@ function MusicItem({ isNew = false, href, children }) {
           <img
             className="fire-chip"
             src="/fire.gif"
-            alt="New release"
+            alt="Иконка нового релиза"
             style={{ zIndex: 2 }}
           />
         )}
@@ -21,7 +21,7 @@ function MusicItem({ isNew = false, href, children }) {
         <img
           className="btn-img"
           src="/headphones.svg"
-          alt="music release link"
+          alt="Иконка кнопки перехода к ссылкам релиза"
         />
       </a>
     </article>
@@ -36,7 +36,7 @@ function MusicSection() {
         <MusicItem href="https://sfm.click/48Ni">
           <img
             src="/music-releases/2_track.webp"
-            alt="single more than justice demands"
+            alt="Обложка сингла Больше чем того требует справедливость"
             className="release-image"
           />
         </MusicItem>
@@ -52,7 +52,7 @@ function MusicSection() {
         <MusicItem href="https://sfm.click/Ronj">
           <img
             src="/music-releases/1_track.webp"
-            alt="single to become a human being"
+            alt="Обложка сингла Человеком стать"
             className="release-image"
           />
         </MusicItem>
