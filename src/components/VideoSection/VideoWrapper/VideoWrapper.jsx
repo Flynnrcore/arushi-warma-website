@@ -16,7 +16,6 @@ function VideoWrapper({ youtubelink, vkvideolink, title }) {
       style={{
         display: "flex",
         flexDirection: "column",
-        width: "90%",
       }}
     >
       <div style={{ display: "flex", gap: "5px" }}>

@@ -9,8 +9,8 @@
   --lines: #111626;
   --btns: #2b2c52;
   --btns-hover: #3a3a64;
-  --text: #dccae9;
-  --headers: #3a3a64;
+  --text: #aeb8c8;
+  --headers: #aeb8c8;
   --slider-btn: invert(6%) sepia(11%) saturate(18%) hue-rotate(314deg)
     brightness(96%) contrast(96%);
   --svg-links: invert(97%) sepia(3%) saturate(13%) hue-rotate(79deg)
@@ -163,9 +163,59 @@ main {
 
 .mainband-photo {
   display: block;
-  width: 100%;
-  height: clamp(260px, 55vh, 680px);
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
   object-fit: cover;
+}
+
+.mainband-wrapper {
+  position: relative;
+  display: block;
+  width: 100vw;
+}
+
+.scroll-down-button {
+  position: absolute;
+  bottom: clamp(20px, 5vh, 48px);
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  transform: translateX(-50%);
+  background: transparent;
+  border: 1px solid rgb(255 255 255 / 70%);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.scroll-down-button:hover {
+  background: rgb(255 255 255 / 15%);
+}
+
+.scroll-down-button:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
+}
+
+.scroll-down-icon {
+  display: grid;
+  gap: 1px;
+  transform: translateY(-2px);
+}
+
+.scroll-down-icon span {
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(45deg);
+}
+
+.scroll-down-icon span + span {
+  margin-top: -7px;
 }
 
 .band-photo {
@@ -501,10 +551,6 @@ footer {
     gap: 1.25rem;
   }
 
-  .mainband-photo {
-    height: clamp(220px, 42vh, 300px);
-  }
-
   .about-section,
   .music-section,
   .video-section {
@@ -570,10 +616,6 @@ footer {
     gap: 1.6rem;
   }
 
-  .mainband-photo {
-    height: clamp(250px, 48vh, 420px);
-  }
-
   .releases {
     width: 90vw;
     gap: 1.2rem;
@@ -611,10 +653,6 @@ footer {
     gap: 2rem;
   }
 
-  .mainband-photo {
-    height: clamp(420px, 52vh, 580px);
-  }
-
   .about-section,
   .music-section,
   .video-section {
@@ -643,7 +681,7 @@ footer {
 
 /* DESKTOP STYLES */
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   html {
     font-size: 18px;
   }
@@ -670,7 +708,7 @@ footer {
     letter-spacing: 3px;
   }
 
-  .about-section {
+  .about-section, .music-section, .video-section {
     width: 90vw;
     display: flex;
     flex-direction: column;
@@ -685,15 +723,10 @@ footer {
       max-height: 80vh;
   }
 
-  .music-section {
-    width: 90vw;
-    overflow: visible;
-    gap: 25px;
-  }
-
   .releases {
     justify-content: center;
     gap: 3rem;
+    width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     overflow: visible;
@@ -702,7 +735,7 @@ footer {
   .single {
     display: flex;
     position: relative;
-    width: min(28vw, 400px);
+    width: min(38vw, 800px);
     max-width: none;
     flex-direction: column;
     align-items: center;
@@ -737,12 +770,6 @@ footer {
     right: 20px;
   }
 
-  .video-section {
-    height: min-content;
-    width: 90vw;
-    gap: 25px;
-  }
-
   .video {
     min-height: 80vh;
   }
@@ -768,5 +795,50 @@ footer {
 
   .release-page-img {
     max-width: 100%;
+  }
+}
+
+/* 2K AND WIDER SCREENS */
+
+@media (min-width: 2000px) {
+  html {
+    font-size: 20px;
+  }
+
+  main {
+    gap: 70px;
+  }
+
+  .header-menu {
+    width: min(90%, 1800px);
+  }
+
+  .header-logo {
+    width: clamp(180px, 16vw, 360px);
+  }
+
+  .about-section,
+  .music-section,
+  .video-section,
+  .releases {
+    width: min(84vw, 1800px);
+  }
+
+  .single {
+    width: min(30vw, 800px);
+  }
+
+  .slideshow, .video, .video-section div {
+    width: 100%
+  }
+
+  .scroll-down-button {
+    width: 64px;
+    height: 64px;
+  }
+
+  .scroll-down-icon span {
+    width: 14px;
+    height: 14px;
   }
 }
