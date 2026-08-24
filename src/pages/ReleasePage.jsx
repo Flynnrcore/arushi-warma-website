@@ -27,17 +27,9 @@ function ReleasePage() {
           <div className="release-top-container">
             <img
               className="release-image release-page-img"
-              src={currRelease.imgnotext}
-              alt=""
+              src={currRelease.imglink}
+              alt={`Изображение Arushi Warma - ${currRelease.name}`}
             />
-            <div className="release-songname-container">
-              <img
-                height="70"
-                src="../header-logo.webp"
-                alt="Логотип Arushi Warma"
-              />
-              <p style={{ margin: "-5px 0 20px" }}>{currRelease.name}</p>
-            </div>
           </div>
           <div className="release-bottom-container">
             <LinkButton
