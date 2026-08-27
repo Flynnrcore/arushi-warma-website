@@ -40,7 +40,7 @@ body {
   font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #232646;
+  background-color: var(--lines);
 }
 
 img {
@@ -192,14 +192,68 @@ main {
   object-fit: contain;
 }
 
+.hero-fox-glitch {
+  position: absolute;
+  inset: 0;
+}
+
 .hero-arrows,
 .hero-fox {
   opacity: 0;
   will-change: transform, opacity, filter;
 }
 
+.hero-fox-glitch-layer {
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform, opacity, clip-path;
+}
+
+.hero-fox-glitch-blue {
+  filter: drop-shadow(-7px 0 rgb(40 110 255 / 85%));
+  mix-blend-mode: screen;
+}
+
+.hero-fox-glitch-cyan {
+  filter: drop-shadow(7px 0 rgb(0 220 255 / 85%));
+  mix-blend-mode: screen;
+}
+
 .hero-bandname {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   will-change: clip-path;
+}
+
+.hero-bandname-half {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
+  will-change: clip-path;
+}
+
+.hero-bandname-left {
+  left: 0;
+}
+
+.hero-bandname-right {
+  right: 0;
+}
+
+.hero-bandname-half img {
+  width: 200%;
+}
+
+.hero-bandname-left img {
+  left: 0;
+}
+
+.hero-bandname-right img {
+  right: 0;
 }
 
 .hero-fox-sheen {
@@ -361,6 +415,9 @@ main {
   width: 100%;
   max-width: 420px;
   height: auto;
+}
+
+.release-image:hover {
   box-shadow: 5px -5px 20px 0px rgba(62, 72, 119, 0.4);
 }
 
@@ -386,34 +443,6 @@ main {
   top: 3px;
   left: 5px;
   width: clamp(30px, 6vw, 50px);
-}
-
-.release-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.2rem 0;
-  width: 100%;
-  height: clamp(30px, 4vh, 40px);
-  text-decoration: none;
-  text-align: center;
-  color: var(--text);
-  background: var(--btns);
-  box-shadow: 5px 0px 15px 0px rgba(62, 72, 119, 0.47);
-}
-
-.release-btn:hover {
-  background: var(--btns-hover);
-  opacity: 0.9;
-}
-
-.release-btn:active {
-  transform: translateY(2px);
-}
-
-.btn-img {
-  height: 30px;
-  filter: var(--svg-btn);
 }
 
 /* VIDEO SECTION STYLES */

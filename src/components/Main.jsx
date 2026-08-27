@@ -38,7 +38,19 @@ function Main({ setHeaderBg }) {
             alt="hero-arrows"
             src="/hero-arrows.svg"
           />
-          <img className="hero-fox" alt="hero-fox" src="/hero-fox.svg" />
+          <div className="hero-fox-glitch" aria-hidden="true">
+            <img className="hero-fox" alt="" src="/hero-fox.svg" />
+            <img
+              className="hero-fox-glitch-layer hero-fox-glitch-blue"
+              alt=""
+              src="/hero-fox.svg"
+            />
+            <img
+              className="hero-fox-glitch-layer hero-fox-glitch-cyan"
+              alt=""
+              src="/hero-fox.svg"
+            />
+          </div>
           <span className="hero-fox-sheen" aria-hidden="true" />
           <img
             className="hero-bandname"

@@ -10,20 +10,14 @@ function ReleaseWrapper({ isNew = false, id, children }) {
             style={{ zIndex: 2 }}
           />
         )}
-        {children}
+        <a
+          href={`/release/${id}`}
+          rel="noopener noreferrer"
+          aria-label="Перейти к релизу"
+        >
+          {children}
+        </a>
       </div>
-      <a
-        className="release-btn"
-        href={`/release/${id}`}
-        rel="noopener noreferrer"
-        aria-label="Перейти к релизу"
-      >
-        <img
-          className="btn-img"
-          src="/headphones.svg"
-          alt="Иконка кнопки перехода к ссылкам релиза"
-        />
-      </a>
     </article>
   );
 }
