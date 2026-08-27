@@ -1,5 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
+import { useMainpageAnimation } from "../hooks/useMainpageAnimation";
 import useScroll from "../hooks/useScroll";
 
 import AboutSection from "./AboutSection";
@@ -7,7 +8,7 @@ import MusicSection from "./MusicSection/MusicSection";
 import VideoSection from "./VideoSection/VideoSection";
 
 function Main({ setHeaderBg }) {
-  const photosBlockRef = useRef(null);
+  const { photosBlockRef, heroLogoRef } = useMainpageAnimation();
   const isScrolledPast = useScroll(photosBlockRef);
 
   const handleScrollToAbout = () => {
@@ -31,6 +32,20 @@ function Main({ setHeaderBg }) {
           src="/band.webp"
           alt="Логотип группы Arushi Warma"
         />
+        <div className="hero-logo" ref={heroLogoRef}>
+          <img
+            className="hero-arrows"
+            alt="hero-arrows"
+            src="/hero-arrows.svg"
+          />
+          <img className="hero-fox" alt="hero-fox" src="/hero-fox.svg" />
+          <span className="hero-fox-sheen" aria-hidden="true" />
+          <img
+            className="hero-bandname"
+            alt="hero-wordmark"
+            src="/hero-bandname.svg"
+          />
+        </div>
         <button
           className="scroll-down-button"
           type="button"
