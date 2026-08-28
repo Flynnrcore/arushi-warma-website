@@ -63,7 +63,7 @@
 @media (min-width: 1024px) {
   .single {
     position: relative;
-    width: min(38vw, 800px);
+    width: min(38vw, 570px);
     max-width: none;
     margin: 20px 0;
     color: var(--text);
