@@ -1,0 +1,79 @@
+.video-section {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  width: min(100%, 1200px);
+  margin: 0 auto;
+  padding: 0;
+}
+
+.video {
+  flex-basis: 100%;
+  min-height: clamp(200px, 23.5vh, 500px);
+  width: min(90vw, 1200px);
+  max-width: 100%;
+  border: none;
+}
+
+.video-src-btn {
+  background-color: transparent;
+  border: none;
+  font-size: clamp(16px, 2.5vw, 20px);
+  padding: clamp(5px, 1vh, 10px) clamp(1px, 0.5vw, 2px);
+  font-family: "customFont";
+  color: #3a3a64;
+  cursor: pointer;
+}
+
+.video-src-btn:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+@media (max-width: 374px) {
+  .video-section {
+    width: 94%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .video-section {
+    width: min(92vw, 900px);
+  }
+
+  .video {
+    width: min(92vw, 820px);
+    min-height: clamp(320px, 42vh, 520px);
+  }
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  .video {
+    width: min(92vw, 720px);
+    min-height: clamp(220px, 30vh, 380px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .video-section {
+    width: 90vw;
+    gap: 25px;
+  }
+
+  .video {
+    min-height: 80vh;
+  }
+}
+
+@media (min-width: 2000px) {
+  .video-section {
+    width: min(84vw, 1800px);
+  }
+
+  .video,
+  .video-section > div {
+    width: 100%;
+  }
+}

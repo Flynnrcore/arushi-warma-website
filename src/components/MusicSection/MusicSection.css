@@ -1,0 +1,73 @@
+.music-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(100%, 1200px);
+  margin: 0 auto;
+}
+
+.releases {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: min(90vw, 1100px);
+}
+
+@media (max-width: 374px) {
+  .music-section {
+    width: 94%;
+  }
+
+  .releases {
+    width: 92vw;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  .releases {
+    width: 90vw;
+    gap: 1.2rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .music-section {
+    width: min(92vw, 900px);
+  }
+
+  .releases {
+    width: min(92vw, 980px);
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .music-section {
+    width: 90vw;
+    gap: 25px;
+  }
+
+  .releases {
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: visible;
+  }
+}
+
+@media (min-width: 2000px) {
+  .music-section {
+    width: min(84vw, 1800px);
+  }
+
+  .releases {
+    width: min(84vw, 1800px);
+  }
+}

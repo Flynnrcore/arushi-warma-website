@@ -1,3 +1,5 @@
+import "./ReleaseWrapper.css";
+
 function ReleaseWrapper({ isNew = false, id, children }) {
   return (
     <article className="single">

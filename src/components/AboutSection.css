@@ -1,0 +1,32 @@
+.about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: min(100%, 1200px);
+  margin: 0 auto;
+}
+
+@media (max-width: 374px) {
+  .about-section {
+    width: 94%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .about-section {
+    width: min(92vw, 900px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-section {
+    width: 90vw;
+    gap: 25px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .about-section {
+    width: min(84vw, 1800px);
+  }
+}

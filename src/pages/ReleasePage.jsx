@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import LinkButton from "../components/LinkButton";
+import "../components/ReleasePage.css";
 import { releases } from "../data/releases";
 
 function ReleasePage() {

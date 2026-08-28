@@ -1,4 +1,5 @@
 import LinkButton from "./LinkButton";
+import "./Footer.css";
 
 function Footer() {
   return (

@@ -1,3 +1,5 @@
+import "./LinkButton.css";
+
 function LinkButton({
   hasName = false,
   colorVariant = false,

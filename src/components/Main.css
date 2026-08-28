@@ -1,0 +1,215 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 80vh;
+  margin: 0 auto;
+  gap: clamp(10px, 3vh, 50px);
+}
+
+.mainband-photo {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  object-fit: cover;
+  opacity: 0.45;
+}
+
+.mainband-wrapper {
+  position: relative;
+  display: block;
+  width: 100vw;
+}
+
+.hero-logo {
+  position: absolute;
+  inset: 15% 15%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-logo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+}
+
+.hero-fox-glitch {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-arrows,
+.hero-fox {
+  opacity: 0;
+  will-change: transform, opacity, filter;
+}
+
+.hero-fox-glitch-layer {
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform, opacity, clip-path;
+}
+
+.hero-fox-glitch-blue {
+  filter: drop-shadow(-7px 0 rgb(40 110 255 / 85%));
+  mix-blend-mode: screen;
+}
+
+.hero-fox-glitch-cyan {
+  filter: drop-shadow(7px 0 rgb(0 220 255 / 85%));
+  mix-blend-mode: screen;
+}
+
+.hero-bandname {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform, opacity, filter;
+}
+
+.hero-bandname-half {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
+  will-change: clip-path;
+}
+
+.hero-bandname-left {
+  left: 0;
+}
+
+.hero-bandname-right {
+  right: 0;
+}
+
+.hero-bandname-half img {
+  width: 200%;
+}
+
+.hero-bandname-left img {
+  left: 0;
+}
+
+.hero-bandname-right img {
+  right: 0;
+}
+
+.hero-fox-sheen {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: linear-gradient(
+    112deg,
+    transparent 42%,
+    rgb(255 255 255 / 8%) 46%,
+    rgb(255 255 255 / 92%) 50%,
+    rgb(255 255 255 / 18%) 54%,
+    transparent 59%
+  );
+  background-size: 280% 100%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  filter: blur(1px);
+  -webkit-mask: url("/public/hero-fox.svg") center / contain no-repeat;
+  mask: url("/public/hero-fox.svg") center / contain no-repeat;
+  will-change: transform, opacity;
+}
+
+.scroll-down-button {
+  position: absolute;
+  bottom: clamp(20px, 5vh, 48px);
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  transform: translateX(-50%);
+  background: transparent;
+  border: 1px solid rgb(255 255 255 / 70%);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.scroll-down-button:hover {
+  background: rgb(255 255 255 / 15%);
+}
+
+.scroll-down-button:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
+}
+
+.scroll-down-icon {
+  display: grid;
+  gap: 1px;
+  transform: translateY(-2px);
+}
+
+.scroll-down-icon span {
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(45deg);
+}
+
+.scroll-down-icon span + span {
+  margin-top: -7px;
+}
+
+@media (max-width: 374px) {
+  main {
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  main {
+    gap: 1.6rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  main {
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    gap: 50px;
+  }
+
+  .mainband-photo {
+    height: 100dvh;
+  }
+}
+
+@media (min-width: 2000px) {
+  main {
+    gap: 70px;
+  }
+
+  .scroll-down-button {
+    width: 64px;
+    height: 64px;
+  }
+
+  .scroll-down-icon span {
+    width: 14px;
+    height: 14px;
+  }
+}

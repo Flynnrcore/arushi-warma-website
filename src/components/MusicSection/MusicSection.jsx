@@ -1,6 +1,7 @@
 import { releases } from "../../data/releases";
 
 import ReleaseWrapper from "./ReleaseWrapper/ReleaseWrapper";
+import "./MusicSection.css";
 
 function MusicSection() {
   return (

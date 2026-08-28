@@ -1,3 +1,5 @@
+import "./Header.css";
+
 function Header({ bgColor }) {
   const handleScrollToEl = (className) => {
     const element = document.querySelector(`.${className}`);

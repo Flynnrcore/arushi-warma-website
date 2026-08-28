@@ -1,0 +1,31 @@
+.link-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  text-decoration: none;
+  color: white;
+}
+
+.link-img,
+.link-color-img {
+  width: clamp(26px, 5vw, 42px);
+  height: auto;
+  margin: 0 clamp(5px, 1vw, 10px);
+  cursor: pointer;
+}
+
+.link-img {
+  filter: var(--svg-icons);
+}
+
+.link-img:hover,
+.link-color-img:hover {
+  opacity: 0.9;
+  transform: scale(1.1);
+}
+
+.link-img:active,
+.link-color-img:active {
+  transform: translateY(2px);
+}

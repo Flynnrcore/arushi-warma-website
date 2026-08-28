@@ -1,4 +1,5 @@
 import Slideshow from "./Slideshow";
+import "./AboutSection.css";
 
 function AboutSection() {
   return (

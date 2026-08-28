@@ -1,0 +1,163 @@
+
+header {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  padding-top: 0.5vh;
+  color: white;
+}
+
+.header-text {
+  letter-spacing: 3px;
+  font-size: larger;
+  margin: 0;
+  color: var(--headers);
+}
+
+.header-logo {
+  width: clamp(110px, 20vw, 240px);
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(0.25rem, 1vw, 0.75rem);
+  width: min(50vw, 300px);
+  max-width: 100%;
+  min-width: 0;
+}
+
+.header-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  width: min(92%, 1200px);
+  margin-top: 0.5vh;
+  padding: 0.5rem clamp(8px, 2vw, 20px);
+  border-radius: clamp(8px, 2vw, 16px);
+}
+
+.header-btn {
+  display: flex;
+  align-items: center;
+
+  min-width: 0;
+  background: none;
+  color: white;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.header-btn.left,
+.header-btn.right {
+  left: auto;
+  right: auto;
+}
+
+.header-btn:hover {
+  text-decoration: underline;
+}
+
+.header-btn:active {
+  transform: translateY(2px);
+}
+
+.logo {
+  flex: 1 1 auto;
+  margin: 2px 0;
+  max-width: 80px;
+  width: 100%;
+}
+
+@media (max-width: 374px) {
+  header {
+    padding-top: 0.25rem;
+  }
+
+  .header-menu {
+    width: min(95%, 1200px);
+    padding: 0.35rem 0.5rem;
+  }
+
+  .header-logo {
+    width: clamp(90px, 24vw, 140px);
+  }
+
+  .header-icons {
+    width: min(60vw, 210px);
+    gap: 0.2rem;
+  }
+
+  .header-text {
+    letter-spacing: 1.5px;
+    font-size: clamp(1.05rem, 6vw, 1.45rem);
+  }
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  header {
+    padding-top: 0.35rem;
+  }
+
+  .header-menu {
+    width: min(94%, 760px);
+    padding: 0.45rem 0.75rem;
+  }
+
+  .header-logo {
+    width: clamp(105px, 20vw, 180px);
+  }
+
+  .header-text {
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) { 
+  .header-menu {
+    width: min(92%, 900px);
+    padding: 0.5rem 1rem;
+  }
+
+  .header-logo {
+    width: clamp(120px, 18vw, 200px);
+  }
+
+  .header-text {
+    font-size: clamp(1.3rem, 3vw, 2rem);
+  }
+}
+
+/* DESKTOP STYLES */
+
+@media (min-width: 1024px) {
+  .header-logo {
+    width: clamp(150px, 20vw, 300px);
+  }
+
+  .header-text {
+    font-size: clamp(1.5em, 3vw, 2em);
+    letter-spacing: 3px;
+  }
+}
+
+/* 2K AND WIDER SCREENS */
+
+@media (min-width: 2000px) {
+  .header-menu {
+    width: min(90%, 1800px);
+  }
+
+  .header-logo {
+    width: clamp(180px, 16vw, 360px);
+  }
+}

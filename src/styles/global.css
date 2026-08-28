@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "customFont";
+  src: url("/public/fonts/Blackcraft.ttf");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: "customFont", sans-serif;
+  font-weight: 100;
+  color: white;
+  font-size: clamp(1rem, 5vw, 2rem);
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--lines);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+.App {
+  min-height: 100vh;
+  text-align: center;
+  background: url(/public/background.gif) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 2000px) {
+  html {
+    font-size: 20px;
+  }
+}

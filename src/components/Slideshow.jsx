@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 
+import "./Slideshow.css";
+
 function Slideshow() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setAutoPlaying] = useState(true);

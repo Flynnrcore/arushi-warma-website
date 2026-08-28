@@ -190,14 +190,26 @@ export const useMainpageAnimation = () => {
       );
       timeline.fromTo(
         ".hero-bandname",
-        { clipPath: "inset(0 100% 0 100%)" },
-        { clipPath: "inset(0 0% 0 0%)", duration: 3, ease: "power2.out" },
-        1,
+        {
+          opacity: 0,
+          y: 12,
+          scale: 0.96,
+          filter: "blur(8px)",
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          filter: "blur(0px)",
+          duration: 1.4,
+          ease: "power3.out",
+        },
+        1.3,
       );
       const sheenTimeline = gsap.timeline({
-        delay: 4,
+        delay: 2.6,
         repeat: -1,
-        repeatDelay: 4,
+        repeatDelay: 6,
       });
 
       sheenTimeline.fromTo(
@@ -206,7 +218,7 @@ export const useMainpageAnimation = () => {
         {
           opacity: 0.9,
           backgroundPosition: "-20% 0",
-          duration: 2.8,
+          duration: 2.2,
           ease: "power2.inOut",
         },
       );

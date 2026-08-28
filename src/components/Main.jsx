@@ -6,6 +6,7 @@ import useScroll from "../hooks/useScroll";
 import AboutSection from "./AboutSection";
 import MusicSection from "./MusicSection/MusicSection";
 import VideoSection from "./VideoSection/VideoSection";
+import "./Main.css";
 
 function Main({ setHeaderBg }) {
   const { photosBlockRef, heroLogoRef } = useMainpageAnimation();

@@ -1,4 +1,5 @@
 import VideoWrapper from "./VideoWrapper/VideoWrapper";
+import "./VideoSection.css";
 
 function VideoSection() {
   return (

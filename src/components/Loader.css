@@ -1,0 +1,25 @@
+.loader-img {
+  filter: var(--svg-icons);
+  width: 10rem;
+  height: 10rem;
+}
+
+.loader-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: clamp(200px, 40vh, 500px);
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .loader-img {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .loader-wrapper {
+    height: 90vh;
+  }
+}
