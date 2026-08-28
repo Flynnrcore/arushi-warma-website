@@ -17,6 +17,7 @@
     brightness(104%) contrast(104%);
   --svg-btn: invert(8%) sepia(44%) saturate(1075%) hue-rotate(191deg)
     brightness(99%) contrast(91%);
+  --svg-icons: invert(79%) sepia(13%) saturate(292%) hue-rotate(178deg) brightness(91%) contrast(91%);
 }
 
 * {
@@ -379,7 +380,7 @@ main {
 }
 
 .loader-img {
-  filter: var(--svg-links);
+  filter: var(--svg-icons);
   width: 10rem;
   height: 10rem;
 }
@@ -520,7 +521,7 @@ footer {
   width: clamp(26px, 5vw, 42px);
   height: auto;
   margin: 0 clamp(5px, 1vw, 10px);
-  filter: var(--svg-links);
+  filter: var(--svg-icons);
   cursor: pointer;
 }
 
