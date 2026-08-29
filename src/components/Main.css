@@ -12,6 +12,7 @@ main {
 .mainband-photo {
   display: block;
   width: 100vw;
+  min-height: 100svh;
   height: 100vh;
   height: 100dvh;
   object-fit: cover;
@@ -22,6 +23,7 @@ main {
   position: relative;
   display: block;
   width: 100vw;
+  min-height: 100svh;
 }
 
 .hero-logo {
