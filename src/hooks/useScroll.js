@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const useScroll = (ref) => {
   const [isScrolledPast, setIsScrolledPast] = useState(false);
+  const isScrolledPastRef = useRef(false);
 
   useEffect(() => {
     const currentElement = ref.current;
@@ -14,16 +15,30 @@ const useScroll = (ref) => {
       const rect = currentElement.getBoundingClientRect();
       const viewportHeight =
         window.innerHeight || document.documentElement.clientHeight;
-      const hasUserScrolled = window.scrollY > 0;
-      const shouldActivateHeader =
-        hasUserScrolled && rect.top <= viewportHeight * 0.35;
 
-      setIsScrolledPast(shouldActivateHeader);
+      const heroIsVisible = rect.top < viewportHeight * 0.9 && rect.bottom > 0;
+      const heroHasLeftViewport = rect.bottom < viewportHeight * 0.75;
+
+      let nextState = isScrolledPastRef.current;
+
+      if (!nextState && heroHasLeftViewport) {
+        nextState = true;
+      }
+
+      if (nextState && heroIsVisible) {
+        nextState = false;
+      }
+
+      if (nextState !== isScrolledPastRef.current) {
+        isScrolledPastRef.current = nextState;
+        setIsScrolledPast(nextState);
+      }
     };
 
     updateScrollState();
 
     let frameId = null;
+
     const handleScroll = () => {
       if (frameId !== null) {
         return;
