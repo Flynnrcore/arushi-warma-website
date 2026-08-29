@@ -133,14 +133,17 @@ main {
   left: 50%;
   display: grid;
   place-items: center;
-  width: 56px;
-  height: 56px;
-  padding: 0;
+  width: auto;
+  min-width: 56px;
+  min-height: 56px;
+  padding: 0.55rem 0.9rem;
   transform: translateX(-50%);
-  background: transparent;
-  border: 1px solid rgb(255 255 255 / 70%);
-  border-radius: 50%;
+  background: rgb(17 22 38 / 55%);
+  border: 1px solid rgb(255 255 255 / 80%);
+  border-radius: 999px;
   cursor: pointer;
+  color: var(--headers);
+  box-shadow: 0 10px 25px rgb(0 0 0 / 22%);
 }
 
 .scroll-down-button:hover {
@@ -150,6 +153,13 @@ main {
 .scroll-down-button:focus-visible {
   outline: 2px solid white;
   outline-offset: 4px;
+}
+
+.scroll-down-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--headers);
 }
 
 .scroll-down-icon {

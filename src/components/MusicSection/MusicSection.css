@@ -4,6 +4,7 @@
   align-items: center;
   width: min(100%, 1200px);
   margin: 0 auto;
+  scroll-margin-top: 10px;
 }
 
 .releases {

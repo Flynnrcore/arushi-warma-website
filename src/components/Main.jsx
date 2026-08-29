@@ -19,7 +19,15 @@ function Main({ setHeaderBg }) {
   };
 
   useEffect(() => {
-    setHeaderBg(isScrolledPast ? "#111626" : "transparent");
+    setHeaderBg(
+      isScrolledPast
+        ? {
+            backgroundColor: "#111626ab",
+            backdropFilter: "blur(8px)",
+            boxShadow: "0 12px 24px rgb(0 0 0 / 18%)",
+          }
+        : { backgroundColor: "transparent" },
+    );
   }, [isScrolledPast, setHeaderBg]);
 
   return (

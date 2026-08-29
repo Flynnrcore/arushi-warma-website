@@ -10,15 +10,16 @@ function Header({ bgColor }) {
     <header>
       <div
         style={{
-          backgroundColor: bgColor,
           transition: "background-color 0.3s ease",
+          ...bgColor,
         }}
         className="header-menu"
       >
         <button
-          className="header-btn"
+          className="header-btn header-brand"
           type="button"
           onClick={() => handleScrollToEl("mainband-photo")}
+          aria-label="Вернуться к началу страницы"
         >
           <img
             className="header-logo"
