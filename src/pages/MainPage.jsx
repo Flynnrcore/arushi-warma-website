@@ -5,7 +5,7 @@ import Header from "../components/Header/Header";
 import Main from "../components/Main";
 
 function MainPage() {
-  const [headerBg, setHeaderBg] = useState({});
+  const [headerBg, setHeaderBg] = useState({ backgroundColor: "transparent" });
 
   return (
     <div className="App">
