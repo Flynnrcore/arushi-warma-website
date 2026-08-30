@@ -1,9 +1,11 @@
 import "./Header.css";
 
+import { getScrollBehavior } from "../../utils/performance";
+
 function Header({ bgColor }) {
   const handleScrollToEl = (className) => {
     const element = document.querySelector(`.${className}`);
-    element.scrollIntoView({ behavior: "smooth" });
+    element.scrollIntoView({ behavior: getScrollBehavior() });
   };
 
   return (

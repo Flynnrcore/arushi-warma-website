@@ -1,11 +1,30 @@
 import { gsap } from "gsap";
 import { useLayoutEffect, useRef } from "react";
 
+import { shouldReduceHeroAnimation } from "../utils/performance";
+
 export const useMainpageAnimation = () => {
   const photosBlockRef = useRef(null);
   const heroLogoRef = useRef(null);
 
   useLayoutEffect(() => {
+    if (shouldReduceHeroAnimation()) {
+      const heroElements = document.querySelectorAll(
+        ".mainband-photo, .hero-arrows, .hero-fox, .hero-fox-glitch-layer, .hero-bandname, .hero-fox-sheen",
+      );
+
+      heroElements.forEach((element) => {
+        element.style.opacity = element.classList.contains("mainband-photo")
+          ? "1"
+          : "1";
+        element.style.filter = "none";
+        element.style.transform = "none";
+        element.style.clipPath = "none";
+      });
+
+      return undefined;
+    }
+
     const animationContext = gsap.context(() => {
       const timeline = gsap.timeline();
 
