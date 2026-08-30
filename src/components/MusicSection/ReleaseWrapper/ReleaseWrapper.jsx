@@ -1,8 +1,18 @@
+import { forwardRef } from "react";
+
 import "./ReleaseWrapper.css";
 
-function ReleaseWrapper({ isNew = false, id, children }) {
+const ReleaseWrapper = forwardRef(function ReleaseWrapper(
+  { isNew = false, id, isVisible = true, children },
+  ref,
+) {
   return (
-    <article className="single">
+    <article
+      ref={ref}
+      className="single"
+      data-release-id={id}
+      data-visible={isVisible}
+    >
       <div className="single-wrapper">
         {isNew && (
           <img
@@ -10,6 +20,8 @@ function ReleaseWrapper({ isNew = false, id, children }) {
             src="/fire.gif"
             alt="Иконка нового релиза"
             style={{ zIndex: 2 }}
+            loading="lazy"
+            decoding="async"
           />
         )}
         <a
@@ -22,6 +34,6 @@ function ReleaseWrapper({ isNew = false, id, children }) {
       </div>
     </article>
   );
-}
+});
 
 export default ReleaseWrapper;
