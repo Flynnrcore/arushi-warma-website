@@ -72,26 +72,16 @@ function MusicSection() {
               }}
             >
               {shouldRenderImage ? (
-                <picture>
-                  <source
-                    media="(max-width: 767px)"
-                    srcSet={release.imglinkMobile || release.imglink}
-                  />
-                  <source
-                    media="(max-width: 1199px)"
-                    srcSet={release.imglinkTablet || release.imglink}
-                  />
-                  <img
-                    className="release-image"
-                    src={release.imglinkDesktop || release.imglink}
-                    alt={`Обложка релиза ${release.name}`}
-                    loading="lazy"
-                    decoding="async"
-                    width={420}
-                    height={420}
-                    sizes="(max-width: 767px) 90vw, (max-width: 1023px) 42vw, 32vw"
-                  />
-                </picture>
+                <img
+                  className="release-image"
+                  src={release.imglink}
+                  alt={`Обложка релиза ${release.name}`}
+                  loading="lazy"
+                  decoding="async"
+                  width={420}
+                  height={420}
+                  sizes="(max-width: 767px) 90vw, (max-width: 1023px) 42vw, 32vw"
+                />
               ) : (
                 <div
                   className="release-image release-image-placeholder"
