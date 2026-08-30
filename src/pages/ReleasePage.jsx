@@ -9,8 +9,6 @@ function ReleasePage() {
   const page = useParams();
   const [currRelease, setCurrRelease] = useState({});
 
-  console.log(currRelease.links);
-
   useEffect(() => {
     if (page.id) {
       setCurrRelease(releases.find((release) => release.id === page.id));

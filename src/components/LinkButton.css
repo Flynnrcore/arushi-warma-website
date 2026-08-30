@@ -6,20 +6,16 @@
   text-decoration: none;
   color: var(--text);
   padding: 0.45rem 0.5rem;
-  border-radius: 999px;
+  border-radius: 8px;
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .link-container:hover {
-  background: rgb(255 255 255 / 5%);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .link-container p {
-  margin: 0;
-  font-size: clamp(0.55rem, 1.6vw, 0.78rem);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  margin: 10px 0 0;
   color: var(--headers);
 }
 
@@ -38,7 +34,6 @@
 .link-img:hover,
 .link-color-img:hover {
   opacity: 0.9;
-  transform: scale(1.1);
 }
 
 .link-img:active,
