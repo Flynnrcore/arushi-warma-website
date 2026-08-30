@@ -1,10 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 
-const useScroll = (ref) => {
+const useScroll = (ref, enabled = true) => {
   const [isScrolledPast, setIsScrolledPast] = useState(false);
   const isScrolledPastRef = useRef(false);
 
   useEffect(() => {
+    if (!enabled) {
+      isScrolledPastRef.current = false;
+      setIsScrolledPast(false);
+      return undefined;
+    }
+
     const currentElement = ref.current;
 
     if (!currentElement) {
@@ -61,7 +67,7 @@ const useScroll = (ref) => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
     };
-  }, [ref]);
+  }, [enabled, ref]);
 
   return isScrolledPast;
 };

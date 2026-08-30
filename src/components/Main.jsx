@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 
 import { useMainpageAnimation } from "../hooks/useMainpageAnimation";
 import useScroll from "../hooks/useScroll";
@@ -10,7 +10,19 @@ import "./Main.css";
 
 function Main({ setHeaderBg }) {
   const { photosBlockRef, heroLogoRef } = useMainpageAnimation();
-  const isScrolledPast = useScroll(photosBlockRef);
+  const isCompactViewport =
+    typeof window !== "undefined" &&
+    window.matchMedia("(max-width: 1199px)").matches;
+  const isScrolledPast = useScroll(photosBlockRef, !isCompactViewport);
+
+  const headerStyle = useMemo(
+    () => ({
+      backgroundColor: "#111626ab",
+      backdropFilter: "blur(8px)",
+      boxShadow: "0 12px 24px rgb(0 0 0 / 18%)",
+    }),
+    [],
+  );
 
   const handleScrollToAbout = () => {
     document
@@ -20,15 +32,11 @@ function Main({ setHeaderBg }) {
 
   useEffect(() => {
     setHeaderBg(
-      isScrolledPast
-        ? {
-            backgroundColor: "#111626ab",
-            backdropFilter: "blur(8px)",
-            boxShadow: "0 12px 24px rgb(0 0 0 / 18%)",
-          }
+      isCompactViewport || isScrolledPast
+        ? headerStyle
         : { backgroundColor: "transparent" },
     );
-  }, [isScrolledPast, setHeaderBg]);
+  }, [headerStyle, isCompactViewport, isScrolledPast, setHeaderBg]);
 
   return (
     <main>
