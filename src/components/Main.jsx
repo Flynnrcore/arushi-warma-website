@@ -2,7 +2,6 @@ import { useEffect } from "react";
 
 import { useMainpageAnimation } from "../hooks/useMainpageAnimation";
 import useScroll from "../hooks/useScroll";
-import { getScrollBehavior } from "../utils/performance";
 
 import AboutSection from "./AboutSection";
 import MusicSection from "./MusicSection/MusicSection";
@@ -16,7 +15,7 @@ function Main({ setHeaderBg }) {
   const handleScrollToAbout = () => {
     document
       .querySelector(".about-section")
-      ?.scrollIntoView({ behavior: getScrollBehavior() });
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
