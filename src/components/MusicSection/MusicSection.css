@@ -15,10 +15,33 @@
   width: min(90vw, 1200px);
 }
 
-.release-image-placeholder {
+.music-release-shell {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  height: auto;
+  border-radius: 12px;
+  overflow: visible;
+  background: linear-gradient(
+    135deg,
+    rgb(34 42 63 / 80%),
+    rgb(19 25 38 / 90%)
+  );
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 6%);
+  transition: box-shadow 0.25s ease;
+}
+
+.music-release-shell-placeholder {
   width: 100%;
   max-width: 420px;
-  height: 420px;
+}
+
+.music-release-placeholder {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   border-radius: 12px;
   background: linear-gradient(
     135deg,
@@ -26,6 +49,12 @@
     rgb(19 25 38 / 90%)
   );
   box-shadow: inset 0 0 0 1px rgb(255 255 255 / 6%);
+}
+
+.music-release-shell:hover {
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 6%),
+    5px -5px 20px 0px rgba(62, 72, 119, 0.4);
 }
 
 @media (max-width: 374px) {

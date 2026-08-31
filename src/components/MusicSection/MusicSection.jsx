@@ -14,6 +14,14 @@ function MusicSection() {
   const [visibleReleaseIds, setVisibleReleaseIds] = useState(
     INITIAL_VISIBLE_RELEASES,
   );
+  const [loadedReleaseIds, setLoadedReleaseIds] = useState({});
+
+  const handleImageLoad = (releaseId) => {
+    setLoadedReleaseIds((prev) => ({
+      ...prev,
+      [releaseId]: true,
+    }));
+  };
 
   useEffect(() => {
     if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
@@ -59,6 +67,7 @@ function MusicSection() {
       <div className="releases">
         {releases.map((release) => {
           const shouldRenderImage = visibleReleaseIds.includes(release.id);
+          const isLoaded = Boolean(loadedReleaseIds[release.id]);
 
           return (
             <ReleaseWrapper
@@ -72,21 +81,36 @@ function MusicSection() {
               }}
             >
               {shouldRenderImage ? (
-                <img
-                  className="release-image"
-                  src={release.imglink}
-                  alt={`Обложка релиза ${release.name}`}
-                  loading="lazy"
-                  decoding="async"
-                  width={420}
-                  height={420}
-                  sizes="(max-width: 767px) 90vw, (max-width: 1023px) 42vw, 32vw"
-                />
+                <div className="music-release-shell" aria-busy={!isLoaded}>
+                  {!isLoaded && (
+                    <div
+                      className="music-release-placeholder"
+                      aria-hidden="true"
+                    />
+                  )}
+                  <img
+                    className={`music-release-image ${isLoaded ? "is-loaded" : "is-loading"}`}
+                    src={release.imglink}
+                    alt={`Обложка релиза ${release.name}`}
+                    loading="lazy"
+                    decoding="async"
+                    width={420}
+                    height={420}
+                    sizes="(max-width: 767px) 90vw, (max-width: 1023px) 42vw, 32vw"
+                    onLoad={() => handleImageLoad(release.id)}
+                    onError={() => handleImageLoad(release.id)}
+                  />
+                </div>
               ) : (
                 <div
-                  className="release-image release-image-placeholder"
+                  className="music-release-shell music-release-shell-placeholder"
                   aria-hidden="true"
-                />
+                >
+                  <div
+                    className="music-release-placeholder"
+                    aria-hidden="true"
+                  />
+                </div>
               )}
             </ReleaseWrapper>
           );
