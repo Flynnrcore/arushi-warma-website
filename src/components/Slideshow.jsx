@@ -32,15 +32,26 @@ function Slideshow() {
   };
 
   useEffect(() => {
-    let interval;
+    let timeoutId;
+
+    const scheduleNextSlide = () => {
+      timeoutId = setTimeout(() => {
+        nextSlide();
+        if (isAutoPlaying) {
+          scheduleNextSlide();
+        }
+      }, 7000);
+    };
 
     if (isAutoPlaying) {
-      interval = setInterval(() => {
-        nextSlide();
-      }, 7000);
+      scheduleNextSlide();
     }
 
-    return () => clearInterval(interval);
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
   }, [isAutoPlaying, nextSlide]);
 
   return (

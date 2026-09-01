@@ -42,15 +42,27 @@ function VideoWrapper({ youtubelink, vkvideolink, title }) {
         </button>
       </div>
       {isLoading && <Loader />}
-      <iframe
-        src={activeSource === "vk" ? vkvideolink : youtubelink}
-        title={`${activeSource} video - ${title}`}
-        className={`video ${isLoading ? "hidden" : ""}`}
-        width="100%"
-        allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
-        onLoad={() => setIsLoading(false)}
-        allowFullScreen
-      />
+      <div
+        style={{
+          aspectRatio: "16 / 9",
+          width: "100%",
+          overflow: "hidden",
+          backgroundColor: "rgb(17 22 38 / 35%)",
+          borderRadius: "12px",
+        }}
+      >
+        <iframe
+          src={activeSource === "vk" ? vkvideolink : youtubelink}
+          title={`${activeSource} video - ${title}`}
+          className={`video ${isLoading ? "hidden" : ""}`}
+          width="100%"
+          height="100%"
+          style={{ border: "none" }}
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+          onLoad={() => setIsLoading(false)}
+          allowFullScreen
+        />
+      </div>
     </div>
   );
 }

@@ -48,6 +48,9 @@ function Main({ setHeaderBg }) {
           className="mainband-photo"
           src="/band.webp"
           alt="Логотип группы Arushi Warma"
+          width={1920}
+          height={1080}
+          fetchPriority="high"
         />
         <div className="hero-logo" ref={heroLogoRef}>
           <img

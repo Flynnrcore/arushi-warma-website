@@ -1,6 +1,7 @@
 @font-face {
   font-family: "customFont";
-  src: url("/public/fonts/Blackcraft.ttf");
+  src: url("/public/fonts/Blackcraft.ttf") format('truetype');
+  font-display: swap;
 }
 
 * {
