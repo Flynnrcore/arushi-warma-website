@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useCallback } from "react";
 
 import { useMainpageAnimation } from "../hooks/useMainpageAnimation";
 import useScroll from "../hooks/useScroll";
@@ -8,6 +8,12 @@ import MusicSection from "./MusicSection/MusicSection";
 import VideoSection from "./VideoSection/VideoSection";
 import "./Main.css";
 
+const headerStyle = {
+  backgroundColor: "#111626ab",
+  backdropFilter: "blur(8px)",
+  boxShadow: "0 12px 24px rgb(0 0 0 / 18%)",
+};
+
 function Main({ setHeaderBg }) {
   const { photosBlockRef, heroLogoRef } = useMainpageAnimation();
   const isCompactViewport =
@@ -15,20 +21,11 @@ function Main({ setHeaderBg }) {
     window.matchMedia("(max-width: 1199px)").matches;
   const isScrolledPast = useScroll(photosBlockRef, !isCompactViewport);
 
-  const headerStyle = useMemo(
-    () => ({
-      backgroundColor: "#111626ab",
-      backdropFilter: "blur(8px)",
-      boxShadow: "0 12px 24px rgb(0 0 0 / 18%)",
-    }),
-    [],
-  );
-
-  const handleScrollToAbout = () => {
+  const handleScrollToAbout = useCallback(() => {
     document
       .querySelector(".about-section")
       ?.scrollIntoView({ behavior: "smooth" });
-  };
+  }, []);
 
   useEffect(() => {
     setHeaderBg(
@@ -36,7 +33,7 @@ function Main({ setHeaderBg }) {
         ? headerStyle
         : { backgroundColor: "transparent" },
     );
-  }, [headerStyle, isCompactViewport, isScrolledPast, setHeaderBg]);
+  }, [isCompactViewport, isScrolledPast, setHeaderBg]);
 
   return (
     <main>

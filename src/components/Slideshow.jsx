@@ -1,29 +1,30 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, memo } from "react";
 
 import "./Slideshow.css";
+
+const PHOTOS = [
+  "/slideshow/slide01.webp",
+  "/slideshow/slide02.webp",
+  "/slideshow/slide03.webp",
+  "/slideshow/slide04.webp",
+];
+const PHOTOS_LENGTH = PHOTOS.length;
 
 function Slideshow() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setAutoPlaying] = useState(true);
 
-  const photos = [
-    "/slideshow/slide01.webp",
-    "/slideshow/slide02.webp",
-    "/slideshow/slide03.webp",
-    "/slideshow/slide04.webp",
-  ];
-
   const nextSlide = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % photos.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % PHOTOS_LENGTH);
     setAutoPlaying(true);
-  }, [photos.length]);
+  }, []);
 
   const prevSlide = useCallback(() => {
     setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + photos.length) % photos.length,
+      (prevIndex) => (prevIndex - 1 + PHOTOS_LENGTH) % PHOTOS_LENGTH,
     );
     setAutoPlaying(true);
-  }, [photos.length]);
+  }, []);
 
   const hadnleChangeSlide = (direction) => {
     setAutoPlaying(false);
@@ -58,25 +59,37 @@ function Slideshow() {
     <article className="slideshow">
       <img
         className="band-photo"
-        src={photos[currentIndex]}
+        src={PHOTOS[currentIndex]}
         alt={`Фото группы ${currentIndex + 1}`}
+        width={800}
+        height={600}
       />
       <button
         type="button"
         className="slider left"
         onClick={() => hadnleChangeSlide("prev")}
       >
-        <img src="/left-arrow.svg" alt="Иконка кнопки предыдущей фотографии" />
+        <img
+          src="/left-arrow.svg"
+          alt="Иконка кнопки предыдущей фотографии"
+          width={24}
+          height={24}
+        />
       </button>
       <button
         type="button"
         className="slider right"
         onClick={() => hadnleChangeSlide("next")}
       >
-        <img src="/right-arrow.svg" alt="Иконка кнопки следующей фотографии" />
+        <img
+          src="/right-arrow.svg"
+          alt="Иконка кнопки следующей фотографии"
+          width={24}
+          height={24}
+        />
       </button>
     </article>
   );
 }
 
-export default Slideshow;
+export default memo(Slideshow);

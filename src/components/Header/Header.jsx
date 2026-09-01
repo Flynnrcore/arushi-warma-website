@@ -1,16 +1,21 @@
+import { useCallback, memo } from "react";
 import "./Header.css";
 
+const headerDivStyle = {
+  transition: "background-color 0.3s ease",
+};
+
 function Header({ bgColor }) {
-  const handleScrollToEl = (className) => {
+  const handleScrollToEl = useCallback((className) => {
     const element = document.querySelector(`.${className}`);
     element.scrollIntoView({ behavior: "smooth" });
-  };
+  }, []);
 
   return (
     <header>
       <div
         style={{
-          transition: "background-color 0.3s ease",
+          ...headerDivStyle,
           ...bgColor,
         }}
         className="header-menu"
@@ -25,7 +30,8 @@ function Header({ bgColor }) {
             className="header-logo"
             src="/header-logo.webp"
             alt="логотип группы Arushi warma"
-            height="80px"
+            width={106}
+            height={80}
           />
         </button>
         <div className="header-icons">
@@ -63,4 +69,4 @@ function Header({ bgColor }) {
   );
 }
 
-export default Header;
+export default memo(Header);

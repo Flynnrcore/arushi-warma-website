@@ -1,24 +1,37 @@
-import { useState } from "react";
+import { useState, useCallback, memo } from "react";
 
 import Loader from "../../Loader";
+
+const containerStyle = {
+  display: "flex",
+  flexDirection: "column",
+};
+
+const buttonGroupStyle = {
+  display: "flex",
+  gap: "5px",
+};
+
+const videoContainerStyle = {
+  aspectRatio: "16 / 9",
+  width: "100%",
+  overflow: "hidden",
+  backgroundColor: "rgb(17 22 38 / 35%)",
+  borderRadius: "12px",
+};
 
 function VideoWrapper({ youtubelink, vkvideolink, title }) {
   const [activeSource, setActiveSource] = useState("vk");
   const [isLoading, setIsLoading] = useState(true);
 
-  const changeSourseHandle = (source) => {
+  const changeSourseHandle = useCallback((source) => {
     setIsLoading(true);
     setActiveSource(source);
-  };
+  }, []);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <div style={{ display: "flex", gap: "5px" }}>
+    <div style={containerStyle}>
+      <div style={buttonGroupStyle}>
         <button
           onClick={() => changeSourseHandle("vk")}
           type="button"
@@ -42,15 +55,7 @@ function VideoWrapper({ youtubelink, vkvideolink, title }) {
         </button>
       </div>
       {isLoading && <Loader />}
-      <div
-        style={{
-          aspectRatio: "16 / 9",
-          width: "100%",
-          overflow: "hidden",
-          backgroundColor: "rgb(17 22 38 / 35%)",
-          borderRadius: "12px",
-        }}
-      >
+      <div style={videoContainerStyle}>
         <iframe
           src={activeSource === "vk" ? vkvideolink : youtubelink}
           title={`${activeSource} video - ${title}`}
@@ -67,4 +72,4 @@ function VideoWrapper({ youtubelink, vkvideolink, title }) {
   );
 }
 
-export default VideoWrapper;
+export default memo(VideoWrapper);

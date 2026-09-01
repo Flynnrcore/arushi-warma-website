@@ -1,3 +1,4 @@
+import { memo } from "react";
 import "./LinkButton.css";
 
 function LinkButton({
@@ -19,10 +20,12 @@ function LinkButton({
         src={src}
         alt={`Иконка: ${name} ссылка`}
         loading="lazy"
+        width={40}
+        height={40}
       />
       {hasName && <p>{name}</p>}
     </a>
   );
 }
 
-export default LinkButton;
+export default memo(LinkButton);

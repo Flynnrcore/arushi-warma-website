@@ -28,6 +28,8 @@ function ReleasePage() {
               className="release-image release-page-img"
               src={currRelease.imglink}
               alt={`Изображение Arushi Warma - ${currRelease.name}`}
+              width={420}
+              height={420}
             />
           </div>
           <div className="release-bottom-container">
