@@ -34,19 +34,22 @@ export const releases = [
       youtube: "",
     },
   },
-  /* {
-    name: "",
+  {
+    id: "3",
+    name: "Electroслэм",
     imglink: "/music-releases/3_track.webp",
+    isNew: true,
     links: {
-      applemusic: "",
-      vkmusic: "",
-      yandex: "",
-      spotify: "",
-      mtcmusic: "",
-      sberzvuk: "",
-      deezer: "",
-      youtubemusic: "",
-      youtube: "",
+      applemusic: "/",
+      vkmusic:
+        "/https://vk.ru/audio_playlist-2000980992_29980992?access_key=2f8d38b9439f3f70f4",
+      yandex: "https://music.yandex.ru/album/44859835",
+      spotify: "https://open.spotify.com/album/2IUV4iVtkTD5EDpyrm4xjc",
+      mtcmusic: "https://music.mts.ru/artist/19157865/albums/44859835",
+      sberzvuk: "/",
+      deezer: "https://www.deezer.com/ru/album/1154897701",
+      youtubemusic: "/",
+      youtube: "https://youtu.be/LnnBCD1xifk",
     },
-  }, */
+  },
 ];

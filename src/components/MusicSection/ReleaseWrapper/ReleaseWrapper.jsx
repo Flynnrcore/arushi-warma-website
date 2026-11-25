@@ -16,16 +16,18 @@ const ReleaseWrapper = memo(
       >
         <div className="single-wrapper">
           {isNew && (
-            <img
-              className="fire-chip"
-              src="/fire.gif"
-              alt="Иконка нового релиза"
-              style={{ zIndex: 2 }}
-              loading="lazy"
-              decoding="async"
-              width={40}
-              height={40}
-            />
+            <span className="new-release-badge" aria-label="Новый сингл">
+              <img
+                className="fire-chip"
+                src="/fire.gif"
+                alt=""
+                loading="lazy"
+                decoding="async"
+                width={40}
+                height={40}
+              />
+              <span>NEW</span>
+            </span>
           )}
           <a
             href={`/release/${id}`}
