@@ -65,7 +65,7 @@ function MusicSection() {
     <section className="music-section">
       <h2 className="header-text">музыка / music</h2>
       <div className="releases">
-        {releases.map((release) => {
+        {[...releases].reverse().map((release) => {
           const shouldRenderImage = visibleReleaseIds.includes(release.id);
           const isLoaded = Boolean(loadedReleaseIds[release.id]);
 
@@ -73,6 +73,7 @@ function MusicSection() {
             <ReleaseWrapper
               key={release.id}
               id={release.id}
+              isNew={release.isNew}
               isVisible={shouldRenderImage}
               ref={(node) => {
                 if (node) {
