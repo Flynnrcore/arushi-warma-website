@@ -6,6 +6,11 @@ function VideoSection() {
     <section className="video-section">
       <h2 className="header-text">видео / video</h2>
       <VideoWrapper
+        youtubelink="https://youtu.be/LnnBCD1xifk"
+        vkvideolink="https://vk.ru/video_ext.php?oid=-2000979727&id=156979727&autoplay=1"
+        title="Electroслэм"
+      />
+      <VideoWrapper
         youtubelink="https://www.youtube.com/embed/ZLaS0psJOCw?si=EktXJDqNz18mg1lL"
         vkvideolink="https://vkvideo.ru/video_ext.php?oid=-219955302&id=456239023&hash=499be83414b96290&hd=3"
         title="Больше чем того требует справедливость"
